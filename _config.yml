@@ -167,17 +167,17 @@ comments_provider: gitalk
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: 马小混
+    username: hunzino1
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: 马小混
+    owner: hunzino1
     repo: blog-comments
     oauth:
         client_id: 5a63242c1f701b8f507d
         client_secret: c1ed0bcc1c74f5f24837defc2dc206319540d3c9
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: 马小混
+    owner: hunzino1
     repo: blog-comments
     clientID: 5a63242c1f701b8f507d
     clientSecret: c1ed0bcc1c74f5f24837defc2dc206319540d3c9
