@@ -62,6 +62,10 @@ navs:
     label: Home
 
   -
+    href: /ruby-tree.html
+    label: Ruby-Tree
+
+  -
     href: /spring-boot.html
     label: Spring-Boot
 
