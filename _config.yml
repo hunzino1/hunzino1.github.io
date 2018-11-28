@@ -6,20 +6,20 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title:  马小混
-subtitle: 码农人生，混混生活
-name: 马小混 
-email: a1450577974@163.com
-description: 本站是马小混的技术分享博客。内容涵盖生活故事、Java后端技术、Spring Boot、Spring Cloud、微服务架构、大数据演进、高可用架构、中间件使用、系统监控等相关的研究与知识分享。
-keywords: hunzino1,maxiaohun,Spring,Spring Boot,Spring Cloud,MongoDB,Jvm,Docker,生活故事,架构,大数据,一线,FastDFS,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,IT技术博客,Java,Python,
+title:  纯洁的微笑
+subtitle: 分享技术，品味人生
+name: 纯洁的微笑 
+email: ityouknow@126.com
+description: 本站是纯洁的微笑的技术分享博客。内容涵盖生活故事、Java后端技术、Spring Boot、Spring Cloud、微服务架构、大数据演进、高可用架构、中间件使用、系统监控等相关的研究与知识分享。
+keywords: ityouknow,纯洁的微笑,Spring,Spring Boot,Spring Cloud,MongoDB,Jvm,Docker,生活故事,架构,大数据,一线,FastDFS,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,IT技术博客,Java,Python,
 encoding: "utf-8"
 favicon: favicon.png 
 
 repository: hunzino1/hunzino1.github.io
 github_url: https://github.com/hunzino1
-cnblog_url: https://github.com/hunzino1
-url: http://hunzino1.github.io
-enforce_ssl: github.com/hunzino1
+cnblog_url: http://www.cnblogs.com/ityouknow
+url: https://hunzino1.github.io
+enforce_ssl: ityouknow.com
 
 ## Gem
 plugins:
@@ -60,10 +60,6 @@ navs:
   -
     href: /
     label: Home
-
-  -
-    href: /ruby-tree.html
-    label: Ruby-Tree
 
   -
     href: /spring-boot.html
@@ -173,17 +169,17 @@ comments_provider: gitalk
 # disqus:
 #     username: ityouknow
 # https://imsun.net/posts/gitment-introduction/
-gitment:
-    owner: 马小混
-    repo: blog-comments
-    oauth:
-        client_id: 5a63242c1f701b8f507d
-        client_secret: c1ed0bcc1c74f5f24837defc2dc206319540d3c9
+# gitment:
+#     owner: ityouknow
+#     repo: blog-comments
+#     oauth:
+#         client_id: 61bfc53d957e74e78f8f
+#         client_secret: 31c61e66cdcc9ada8db2267ee779d0bdafac434c
 # https://github.com/gitalk/gitalk#install
-gitalk:
-    owner: 马小混
-    repo: blog-comments
-    clientID: 5a63242c1f701b8f507d
-    clientSecret: c1ed0bcc1c74f5f24837defc2dc206319540d3c9
+# gitalk:
+#     owner: ityouknow
+#     repo: blog-comments
+#     clientID: 61bfc53d957e74e78f8f
+#     clientSecret: 31c61e66cdcc9ada8db2267ee779d0bdafac434c
 # 在使用其它评论组件时可点击显示 Disqus
-lazy_load_disqus : true
+# lazy_load_disqus : true
