@@ -14,6 +14,7 @@ permalink: /link
 - [麦田技术博客](http://blog.itmyhome.com/) - 将来的你，一定会感激现在拼命努力的自己。 
 - [王登科-DK博客](http://www.wdk.pw) - 一个技术创业者  
 - [架构师小密圈](http://www.3xmq.com/) - 架构师的小圈子  
+- [spring4all](http://spring4all.com/) - Spring For All 垂直技术社区  
 - [猿天地](http://cxytiandi.com/) - 天地是一个综合性的网站,以程序猿用户为主,提供各种开发相关的内容。     
 - [rickiyeat的博客](http://blog.csdn.net/rickiyeat) - hadoop、spring boot/cloud技术博客   
 - [丑胖侠的技术生涯](http://blog.csdn.net/wo541075754) - 每一步成长都想与你分享    
@@ -40,7 +41,7 @@ permalink: /link
 
 ## 个人链接
 
-- [ityouknow](http://www.ityouknow.com/) - 个人独立博客
+- [ityouknow](https://hunzino1.github.io/) - 个人独立博客
 - [github](https://github.com/ityouknow) -  我分享代码的地方
 - [微博](http://weibo.com/ityouknow) -  我的微博
 - [知乎](https://www.zhihu.com/people/ityouknow) - 个人知乎地址，用的不太多大多数都在潜水
@@ -53,6 +54,6 @@ permalink: /link
 *需要展示你的网站，就在本页下面留言吧，也算是一种宣传方式。格式要求如下：*
 
 - 网站名称：ityouknow  
-- 网站链接：http://www.ityouknow.com  
+- 网站链接：https://hunzino1.github.io  
 - 网站描述：neo 的个人博客，分享技术，分享生活  
 
