@@ -65,17 +65,17 @@ navs:
     href: /ruby-tree.html
     label: Ruby-Tree
 
-  -
-    href: /spring-boot.html
-    label: Spring-Boot
-
-  -
-    href: /spring-cloud.html
-    label: Spring-Cloud
-
-  -
-    href: /archives.html
-    label: Archives
+  # -
+  #   href: /spring-boot.html
+  #   label: Spring-Boot
+  #
+  # -
+  #   href: /spring-cloud.html
+  #   label: Spring-Cloud
+  #
+  # -
+  #   href: /archives.html
+  #   label: Archives
 
   -
     href: /link.html
