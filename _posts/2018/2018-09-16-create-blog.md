@@ -44,7 +44,7 @@ Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个�
 我的博客经过了三个阶段，第一个阶段，完全依托于使用 GitHub Pages 来构建；第二个阶段，将博客托管于国外的一个服务商；第三个阶段，服务器迁移回到国内、域名备案。之前也写过几篇关于技术博客的文章，如下：
 
 - [千里追踪博客之殇](https://hunzino1.github.io/other/2017/09/10/blog-stop-a-month.html)
-- [历时25天，我的博客（www.ityouknow.com）终于又活了过来](https://hunzino1.github.io/life/2018/06/10/my-blog-back.html)
+- [历时25天，我的博客（hunzino1.github.io）终于又活了过来](https://hunzino1.github.io/life/2018/06/10/my-blog-back.html)
 - [技术博客那些事儿](https://hunzino1.github.io/other/2017/07/16/operating-technology-blog.html)
 
 使用 Github Pages + Jekyll 构建一个技术博客很简单，基本上步骤就是网上找一个自己喜欢的主题，直接 Fork 到自己的 Github ，然后在删掉原博客中的内容，在上传自己的文章即可，以我自己的博客为例。

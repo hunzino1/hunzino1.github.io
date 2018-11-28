@@ -482,7 +482,7 @@ htmlhead 是指定义的代码片段 如 ```th:fragment="copy"```
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[www.ityouknow.com](https://hunzino1.github.io)**   
+**出处：[hunzino1.github.io](https://hunzino1.github.io)**   
 **版权所有，欢迎保留原文链接进行转载：)**
 
 
