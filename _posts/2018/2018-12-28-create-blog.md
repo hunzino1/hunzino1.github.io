@@ -157,9 +157,7 @@ config文件配置如下：
 
 - 3、client_id:
 
-  ![生成client_id](https://github.com/settings/applications/new)
-
-  生成之后填上对应的Client ID和Client Secret。
+ [生成client_id链接](https://github.com/settings/applications/new),生成之后填上对应的Client ID和Client Secret。
 
 至此，博客也可以支持评论。
 
