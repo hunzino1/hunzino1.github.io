@@ -118,7 +118,7 @@ Git原理
 
 --------------------------------------------------------------------------------
 
-请查看: [Git常用命令](http://git.tuan800-inc.com/ruby/zhe800_zhaoshang/wikis/git_basic_commands)
+请查看: [Git常用命令](https://hunzino1.github.io/other/2018/git_basic_commands)
 
 Git Flow工作原理
 -------------
