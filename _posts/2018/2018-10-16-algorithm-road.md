@@ -2,8 +2,8 @@
 layout:     post
 title:      算法之路
 no-post-nav: true
-category: life
-tags: [life]
+category: algorithmtree
+tags: [algorithmtree]
 excerpt: 加加油
 ---
 

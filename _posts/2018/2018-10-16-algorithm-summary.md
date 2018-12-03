@@ -2,8 +2,8 @@
 layout:     post
 title:      经典算法思想总结
 no-post-nav: true
-category: life
-tags: [life]
+category: algorithmtree
+tags: [algorithmtree]
 excerpt: 今天比较烦
 ---
 

@@ -2,8 +2,8 @@
 layout:     post
 title:      算法知识树
 no-post-nav: true
-category: life
-tags: [life]
+category: algorithmtree
+tags: [algorithmtree]
 excerpt: 求真务实
 ---
 
