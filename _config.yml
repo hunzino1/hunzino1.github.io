@@ -131,6 +131,11 @@ classes:
     describe: 一个架构师的自我修养
 
   -
+    href: /ai-ai.html
+    name: 机器学习算法之路
+    describe: 小小的我，有大大的梦
+
+  -
     href: /jvm.html
     name: Jvm系列文章
     describe: Java之根基，Java程序员必学
