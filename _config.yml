@@ -69,13 +69,9 @@ navs:
     href: /algorithm-tree.html
     label: Algorithm-Tree
 
-  # -
-  #   href: /spring-cloud.html
-  #   label: Spring-Cloud
-  #
-  # -
-  #   href: /archives.html
-  #   label: Archives
+  -
+    href: /ai-road.html
+    label: AI-Road
 
   -
     href: /link.html

@@ -2,8 +2,8 @@
 layout:     post
 title:      python数据类型总结(对比java)
 no-post-nav: true
-category: life
-tags: [life]
+category: ai
+tags: [ai]
 excerpt: 每天都不忘保持一点点紧张，直到实现目标之后。
 ---
 
