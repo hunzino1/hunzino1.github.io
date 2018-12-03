@@ -98,6 +98,10 @@ labels:
     name: 架构
     
   -
+    href: /ai-ai.html
+    name: 架构
+    
+  -
     href: /jvm.html
     name: Jvm
 
