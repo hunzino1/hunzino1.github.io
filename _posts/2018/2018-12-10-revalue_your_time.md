@@ -49,6 +49,12 @@ excerpt: 岁月如今。
 
 ![我的时间表](https://hunzino1.github.io/assets/images/2018/life/time.jpge)
 
+### 计划中不可缺少的事(3个月内)
+
+- 1、编程学习计划
+
+- 2、每天思考一些东西
+
 ### 每天要做的事
 
 - 1、每天五分钟口语
