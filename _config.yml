@@ -95,7 +95,7 @@ labels:
 
   -
     href: /arch.html
-    name: 架构
+    name: 机器学习
     
   # -
   #   href: /ai-ai.html
@@ -131,8 +131,8 @@ classes:
 
   -
     href: /arch.html
-    name: 架构师之路
-    describe: 一个架构师的自我修养
+    name: 机器学习总结
+    describe: 一个小码农的自我修养
 
   # -
   #   href: /ai-ai.html
@@ -141,8 +141,8 @@ classes:
 
   -
     href: /jvm.html
-    name: Jvm系列文章
-    describe: Java之根基，Java程序员必学
+    name: 算法之道
+    describe: 算法学习之路
 
 
 # ---------------- #
