@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 机器学习算法之路
-titlebar: ai
-subtitle: <span class="mega-octicon octicon-keyboard"></span>&nbsp;&nbsp; 其实我是一名程序员。
-menu: ai
+title: AI之道
+titlebar: ai_ai
+subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
+menu: ai_ai
 css: ['blog-page.css']
-permalink: /ai
+permalink: /ai_ai
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /ai
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='ai' or post.keywords contains '算法' %}
+                {% if post.category=='jvm' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
