@@ -102,6 +102,10 @@ labels:
     name: 架构
     
   -
+    href: /psychology.html
+    name: 心理学
+    
+  -
     href: /jvm.html
     name: Jvm
 
@@ -138,6 +142,11 @@ classes:
     href: /ai_ai.html
     name: 机器学习算法之路
     describe: 小小的我，有大大的梦
+
+  -
+    href: /psychology.html
+    name: 心理学
+    describe: 排毒养颜,天下武功
 
   -
     href: /jvm.html
