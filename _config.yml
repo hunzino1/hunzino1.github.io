@@ -97,9 +97,9 @@ labels:
     href: /arch.html
     name: 机器学习
     
-  # -
-  #   href: /ai-ai.html
-  #   name: 架构
+  -
+    href: /ai-ai.html
+    name: 架构
     
   -
     href: /jvm.html
@@ -134,10 +134,10 @@ classes:
     name: 机器学习总结
     describe: 一个小码农的自我修养
 
-  # -
-  #   href: /ai-ai.html
-  #   name: 机器学习算法之路
-  #   describe: 小小的我，有大大的梦
+  -
+    href: /ai-ai.html
+    name: 机器学习算法之路
+    describe: 小小的我，有大大的梦
 
   -
     href: /jvm.html

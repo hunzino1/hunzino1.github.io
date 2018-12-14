@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Jvm系列文章
+title: 算法之道
 titlebar: jvm
-subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; jvm系列文章
+subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
 menu: jvm
 css: ['blog-page.css']
 permalink: /jvm
