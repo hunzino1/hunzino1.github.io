@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AI之道
+title: rails技术栈
 titlebar: rails_stack
 subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
 menu: rails_stack
