@@ -94,8 +94,8 @@ labels:
     name: 故事
 
   -
-    href: /arch.html
-    name: 机器学习
+    href: /rails_knowlage_stack.html
+    name: rails技术栈
     
   -
     href: /ai_ai.html
@@ -134,8 +134,8 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /arch.html
-    name: 机器学习总结
+    href: /rails_knowlage_stack.html
+    name: rails技术栈
     describe: 一个小码农的自我修养
 
   -
