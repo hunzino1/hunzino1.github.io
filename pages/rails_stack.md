@@ -1,11 +1,11 @@
 ---
 layout: page
-title: rails技术栈
+title: AI之道
 titlebar: rails_stack
-subtitle: <span class="mega-octicon octicon-keyboard"></span>&nbsp;&nbsp; 一个小码农的自我成长之路。
+subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
 menu: rails_stack
 css: ['blog-page.css']
-permalink: /arch
+permalink: /rails_stack
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /arch
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='rails_stack' or post.keywords contains '架构' %}
+                {% if post.category=='rails_stack' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

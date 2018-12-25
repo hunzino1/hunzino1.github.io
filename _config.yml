@@ -94,7 +94,7 @@ labels:
     name: 故事
 
   -
-    href: /rails_knowlage_stack.html
+    href: /rails_stack.html
     name: rails技术栈
     
   -
@@ -134,7 +134,7 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /rails_knowlage_stack.html
+    href: /rails_stack.html
     name: rails技术栈
     describe: 一个小码农的自我修养
 
