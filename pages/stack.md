@@ -1,11 +1,11 @@
 ---
 layout: page
 title: 算法之道
-titlebar: jvm
+titlebar: stack
 subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
-menu: jvm
+menu: stack
 css: ['blog-page.css']
-permalink: /jvm
+permalink: /stack
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /jvm
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='jvm' %}
+                {% if post.category=='stack' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

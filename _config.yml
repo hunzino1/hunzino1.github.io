@@ -86,6 +86,10 @@ navs:
 labels:
 
   -
+    href: /stack.html
+    name: 技术栈
+
+  -
     href: /share/2017/10/01/resource-sharing.html
     name: 资源
 
@@ -104,10 +108,6 @@ labels:
   -
     href: /psychology.html
     name: 心理学
-    
-  -
-    href: /jvm.html
-    name: Jvm
 
   -
     href: /fastdfs.html
@@ -149,9 +149,9 @@ classes:
     describe: 排毒养颜,天下武功
 
   -
-    href: /jvm.html
-    name: 算法之道
-    describe: 算法学习之路
+    href: /stack.html
+    name: 技术栈
+    describe: 技术栈
 
 
 # ---------------- #
