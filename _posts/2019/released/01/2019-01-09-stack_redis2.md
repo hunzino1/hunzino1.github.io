@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈1 - Redis(1)
+title:      技术栈1 - Redis(2)
 no-post-nav: true
 category: stack
 tags: [stack]
