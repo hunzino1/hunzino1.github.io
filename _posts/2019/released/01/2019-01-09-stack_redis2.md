@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈1 - Redis(2)
+title:      技术栈1 - Redis(2) - 持久化和复制
 no-post-nav: true
 category: stack
 tags: [stack]
