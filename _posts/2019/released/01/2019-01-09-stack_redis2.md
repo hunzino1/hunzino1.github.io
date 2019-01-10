@@ -151,8 +151,20 @@ appendonly yes选项和appendfsync everysec。
   2、节约时间，检查INFO命令的输出结果中aof_pending_bio_fsync是否为0.
   保存到硬盘之后，将主从服务器连接作为参数，检查上述验证。
   代码见p73
+
+借助复制和AOF持久化，可以增强对系统崩溃的抵抗能力。
 ```
 
 ![](https://hunzino1.github.io/assets/images/2019/redis/info_command.png)
 
+#### 4.3 处理系统故障
 
+> 再健壮的系统，也不可能保证100%不会出错，所以要考虑到出现故障如何修复。
+
+```html
+4.3.1 验证快照文件和AOF文件
+
+1、两个命令，检查快照和AOF文件的状态。 redis-check-aof 和 redis-check-dump
+
+```
+![](https://hunzino1.github.io/assets/images/2019/redis/check_command.png)
