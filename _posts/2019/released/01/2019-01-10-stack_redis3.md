@@ -62,6 +62,7 @@ p76:
 python实现：
 
   conn.pipeline(True)  # 使用事务
+
   conn.pipeline(False)  # 不使用事务
 
 #### 其他改善性能的选项
@@ -69,6 +70,7 @@ python实现：
 命令： redis-benchmark (-c l -q)
 
 展示一些常用命令在1秒内可以执行的次数。
+
 一般python客户端是所示性能的50%~60%。
 
 ![](https://hunzino1.github.io/assets/images/2019/redis/benchmark.png)
