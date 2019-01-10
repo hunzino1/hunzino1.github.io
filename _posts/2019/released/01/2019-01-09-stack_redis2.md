@@ -166,5 +166,21 @@ appendonly yes选项和appendfsync everysec。
 
 1、两个命令，检查快照和AOF文件的状态。 redis-check-aof 和 redis-check-dump
 
+2、快照文件由于本身已经压缩，所以还有修复的办法。
+  验证，计算快照文件SHA1和SHA256散列值进行验证。
+
+3、AOF修复： redis-check-aof --fix
+
+  扫描AOF文件，将第一个出粗的命令以及之后的内容全部清除。
+
+4.3.2 更换故障主服务器
+
+主服务器出错的话，需要设置新的主服务器进行替换。 具体步骤如下：
+
+假如A主B从
+
+方法1： 将新机器C作为新的主服务器;  对B save命令创建快照，发送给C，C启动，将B设置伪C的从服务器
+方法2： 将B升级为主服务器，创建B的从服务器。
+
 ```
 ![](https://hunzino1.github.io/assets/images/2019/redis/check_command.png)
