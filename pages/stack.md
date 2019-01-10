@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 算法之道
+title: 技术栈学习
 titlebar: stack
 subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 兴趣是最好的动力。
 menu: stack
