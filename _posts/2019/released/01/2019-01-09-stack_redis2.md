@@ -72,13 +72,13 @@ p62: 持久化的概念：
 > 上一节讲的是持久化redis数据，而为了高可用，高负载的实现，需要扩展平台，也就是多服务器。这就需要复制了。
 
 ```html
-1、复制的概念：
+4.2.1、复制的概念：
   复制可以使得从服务器拥有一个实时更新的数据副本，使得从服务器可以处理客户端发送的请求。
 
   主从服务器： 1、从服务器实时更新数据； 2、客户端读请求随意访问【从】服务器，从而实现负载均衡。
 
 p69
-2、redis复制配置选项
+4.2.2、redis复制配置选项
   1、从服务器连接主服务器时(sync命令)，会触发主服务器的bgsave操作(快照)。 所以有三点前提：
       1、dir选项     文件保存路径
       2、dbfilename  快照文件名称
@@ -98,7 +98,7 @@ p69
   具体过程如图
 ```
 
-![](https://hunzino1.github.io/assets/images/2019/redis/multi_slave.png)
+![](https://hunzino1.github.io/assets/images/2019/redis/redis_copy.png)
 
 ```html
 如图：
@@ -118,12 +118,41 @@ p69
 多个新的从服务器同时连接主服务器时，可能会重用快照文件。
 ```
 
-![](https://hunzino1.github.io/assets/images/2019/redis/redis_copy.png)
+![](https://hunzino1.github.io/assets/images/2019/redis/multi_slave.png)
 
 ![](https://hunzino1.github.io/assets/images/2019/redis/master_slave_tree.png)
 
 ```html
-  4、主从链
+4.2.3 主从链
   问题：当多个从服务器连接主服务器，同步的带宽，网络资源占用，可能会影响同一网络下的其他硬件网速。
   解决：
+  如图，从服务器也可以拥有自己的从服务器，这就是主从链（master/slave chaining）。
+  从服务器对从服务器进行复制，从而降低了主服务器的同步负荷。
+
+  1、从服务器从从服务器复制
+  假如从服务器X拥有从服务器Y，X执行上图表4-2步骤4时，会断开与Y的连接，导致Y需要重新连接重新同步。
+  （缓存器命令断开与Y的链接，这样Y在此连接时也相当于复制了主服务器）
+
+  如图4.1，多从服务器同步，主服务器无法快速更新所有服务器，重新连接和重新同步都会造成负载超载的问题，
+  如图可以创建一个由redis主从节点(master/slave node)组成的中间层来分担主服务器的复制工作。
+
+结论：
+以上持久化和复制，借助复制和AOF持久化，可以将数据持久化到多台机器上。
+设置配置：
+appendonly yes选项和appendfsync everysec。
+
+4.2.4 检验硬盘写入
+目的：检测数据是否已经被同步到硬盘中。
+
+1、验证主服务器是否已经将写数据发送至从服务器。
+  用户将所有真正的数据写入到主服务器之后，再向主服务器写入一个唯一的虚构值(unique dummy value),然后检查虚构值是否存在于从服务器。 如此就检验了。
+2、判断数据是否已经保存到硬盘里。
+  1、对于每秒同步一次的AOF文件，可以等待1s确保数据已经保存； （费时）
+  2、节约时间，检查INFO命令的输出结果中aof_pending_bio_fsync是否为0.
+  保存到硬盘之后，将主从服务器连接作为参数，检查上述验证。
+  代码见p73
 ```
+
+![](https://hunzino1.github.io/assets/images/2019/redis/info_command.png)
+
+
