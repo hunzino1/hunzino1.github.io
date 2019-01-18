@@ -1,10 +1,13 @@
 ---
 layout:     post
 title:      计算机网络(1) - 网络分层、TCP、IP、Http、Socket总结
-category: rubytree
-tags: [rubytree]
+category: interview
+tags: [interview]
 excerpt: 
 ---
+
+网络分层、TCP、IP、Http、Socket总结
+=====================================
 
 > 按照自身所设定的知识树学习之路，仅供参靠。
 
