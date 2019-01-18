@@ -65,7 +65,7 @@ Syn攻击是一个典型的DDOS攻击。
 
 检测SYN攻击非常的方便，当你在服务器上看到大量的半连接状态时，特别是源IP地址是随机的，基本上可以断定这是一次SYN攻击.在Linux下可以如下命令检测是否被Syn攻击
 
-netstat -n -p TCP | grep SYN_RECV
+> netstat -n -p TCP | grep SYN_RECV
 
 一般较新的TCP/IP协议栈都对这一过程进行修正来防范Syn攻击，修改tcp协议实现。主要方法有SynAttackProtect保护机制、SYN cookies技术、增加最大半连接和缩短超时时间等.
 但是不能完全防范syn攻击。
