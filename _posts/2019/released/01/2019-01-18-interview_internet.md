@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      计算机网络(1) - 网络分层、TCP、IP、Http、Socket总结
-no-post-nav: true
 category: rubytree
 tags: [rubytree]
 excerpt: 
