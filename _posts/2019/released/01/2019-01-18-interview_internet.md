@@ -3,363 +3,174 @@ layout:     post
 title:      计算机网络(1) - 网络分层、TCP、IP、Http、Socket总结
 category: interview
 tags: [interview]
-excerpt: 
+excerpt: 每天一句话，成天逼逼啥
 ---
 
 网络分层、TCP、IP、Http、Socket总结
 =====================================
 
-> 按照自身所设定的知识树学习之路，仅供参靠。
+本文是对TCP、IP、Http、Socket等基础知识做一总结，读完本篇博文，您将了解到：
 
-# 一) 总纲
+* 网络分层
+* tcp/IP
+* http
+* socket
 
-- 1、【2天】学习[Vim](http://www.vim.org/), 请下载vim7.2中文手册
-- 2、【1天】学习Linux基本命令 和 git(《git pro》)[git专版页面]()
-- 3、【2天】学习Ruby, 请参考《Ruby基础教程》
-- 4、【10天】学习《Ruby On Rails》
+有误之处还请指正。
 
-### linux基本命令：
-- [Linux 新手应该知道的 26 个命令](http://locez.com/Linux/common-command/)
-- [41个Linux基础命令介绍--整理自鸟哥私房菜](https://blog.csdn.net/xiaoguaihai/article/details/8705992)
-- [Linux命令便捷查询手册](http://linux.51yip.com/)
-
-# 二) ruby知识树
-
-该文档涵盖了Ruby和Ruby On Rails从初级程序员至高级程序员, 最终成为系统架构师需要掌握的知识点.
-
-阅读完该文档后，您将会了解到:
-
-* Ruby和Ruby On Rails的初级，中级，高级技巧.
-* Web架构设计
-* 设计模式，计算机原理，数据与数据结构等
-
---------------------------------------------------------------------------------
-
-Linux操作 @liukun
----------
-#### [Linux常用命令列表](https://hunzino1.github.io/other/2018/Linux_basic_commands)
-#### 《鸟哥私房菜》
-
-git和git-flow @dengqinghua
--------------
-#### git
-* [Git常用命令列表](https://hunzino1.github.io/other/2018/git_basic_commands)
-* [Git的原理(参考书籍 摘出章节)](https://hunzino1.github.io/other/2018/git_inspection)
-
-#### git-flow
-* [git-flow 工作流程和基本命令](https://hunzino1.github.io/other/2018/git_flow_basic_commands)
-
-代码/注释规范 @dengqinghua
--------------
-#### [代码规范基础](https://hunzino1.github.io/2018wiki-code-ruby-style)
-#### [代码注释规范](https://hunzino1.github.io/other/2018/code-comments-style)
-
-Ruby语言 @dengqinghua @liukun
---------
-#### 基础语法 @liukun
-* [Ruby知识概要和关键词](https://hunzino1.github.io/other/2018/ruby_basic_knowledge)
-* [Ruby基础知识梳理](https://hunzino1.github.io/other/2018/ruby_basic_introduction)
-* 《Ruby基础教程》(编号：95)
-* [Learn Ruby the hard way](http://learnrubythehardway.org/)
-
-#### 类库
-* 《Programming Ruby》(TODO 添加书名编号)
-* http://ruby-doc.org/
-
-#### 元编程 @dengqinghua
-* [ruby元编程](https://hunzino1.github.io/other/2018/ruby_metaprogramming)
-
-Rails框架
-------------
-#### MVC的概念
-[当请求到服务器时，MVC三部分的协作方式](https://hunzino1.github.io/other/2018/mvc_overview)
-
-#### Model
-  * [Active Record Basics](https://hunzino1.github.io/other/2018/active_record_basics_list)
-  * [Active Record Migrations](https://hunzino1.github.io/other/2018/active_record_migrations_list)
-  * [Active Record Validations](https://hunzino1.github.io/other/2018/active_record_validations_list)
-  * [Active Record Callbacks](https://hunzino1.github.io/other/2018/active_record_callbacks_list)
-  * [Active Record Associations](https://hunzino1.github.io/other/2018/active_record_associations_list)
-  * [Active Record Query Interface](https://hunzino1.github.io/other/2018/active_record_query_interface_list)
-
-#### Controller
-  * [Action Controller and Routes](https://hunzino1.github.io/other/2018/controller_list)
-
-#### View
-  * [Layouts and Rendering in Rails](https://hunzino1.github.io/other/2018/layouts_and_rendering_list)
-  * [Action View Form Helpers](https://hunzino1.github.io/other/2018/form_helpers)
-  * [前端知识](https://hunzino1.github.io/other/2018/front_list)
-
-#### 其他
-   * [Rails常用命令和Rake的用法](https://hunzino1.github.io/other/2018/command_line_list)
-   * [主从库使用](https://hunzino1.github.io/other/2018/master_slave_list)
-   * [Rails配置](https://hunzino1.github.io/other/2018/rails_config_list)
-   * [RSpec](https://hunzino1.github.io/other/2018/rspec_list)
-
-Rails开发相关工具
------------------------------
-#### Redis
-  * [Redis基本用法](https://hunzino1.github.io/other/2018/redis_list)
-
-#### Sidekiq
-  * [Sidekiq基本用法](https://hunzino1.github.io/other/2018/sidekiq_list)
-
-#### God
-  * [God基本用法](https://hunzino1.github.io/other/2018/god_list)
-
-#### rails_service
-  * [rails_service基本用法](https://hunzino1.github.io/other/2018/rails_service_list)
-
-#### Memcached
-  * [Memcached基本用法](https://hunzino1.github.io/other/2018/memcached_list)
-
-#### Ngnix
-  * [Nginx基本用法](https://hunzino1.github.io/other/2018/nginx_list)
-
-Rails Guides
----------------
-#### 必读部分
-- Models
-  + [Getting Started with Rails](http://guides.rubyonrails.org/getting_started.html)
-  + [Active Record Basics](http://guides.rubyonrails.org/active_record_basics.html)
-  + [Active Record Migrations](http://guides.rubyonrails.org/active_record_migrations.html)
-  + [Active Record Validations](http://guides.rubyonrails.org/active_record_validations.html)
-  + [Active Record Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html)
-  + [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
-  + [Active Record Query Interface](Active Record Query Interface)
-
-- Views
-  + [Layouts and Rendering in Rails](http://guides.rubyonrails.org/layouts_and_rendering.html)
-  + [Action View Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
-
-- Controllers
-  + [Action Controller Overview](http://guides.rubyonrails.org/action_controller_overview.html)
-  + [Rails Routing from the Outside In](http://guides.rubyonrails.org/routing.html)
-
-- 其他必读
-  + [Active Support Core Extensions](http://guides.rubyonrails.org/active_support_core_extensions.html)
-  + [Securing Rails Applications](http://guides.rubyonrails.org/security.html)
-  + [Rails Internationalization API](http://guides.rubyonrails.org/i18n.html)
-  + [Rake Tasks](http://guides.rubyonrails.org/command_line.html)
-
-#### 选读部分
-  + [Action Mailer Basics](http://guides.rubyonrails.org/action_mailer_basics.html)
-  + [Debugging Rails Applications](http://guides.rubyonrails.org/debugging_rails_applications.html)
-  + [Configuring Rails Applications](http://guides.rubyonrails.org/configuring.html)
-  + [Autoloading and Reloading Constants](http://guides.rubyonrails.org/autoloading_and_reloading_constants.html)
-  + [Rails on Rack](http://guides.rubyonrails.org/rails_on_rack.html)
-  + [Creating and Customizing Rails Generators](http://guides.rubyonrails.org/generators.html)
-  + [Ruby on Rails Guides Guidelines](http://guides.rubyonrails.org/ruby_on_rails_guides_guidelines.html)
-
-Rails源码
+网络分层
 -----------
-#### 查看源码工具
-  * [Pry](https://hunzino1.github.io/other/2018/using_pry)
 
-#### Rails源码模块
-建议:
-1. 先看activesupport, 再看activemodel, 最后看 activerecord, actionpack和actionview
-2. 先看activesupport的core_ext/, 再看其他
+网络分层就是将网络节点所要完成的数据的发送或转发、打包或拆包，控制信息的加载或拆出等工作，分别由不同的硬件和软件模块去完成。这样可以将往来通信和网络互连这一复杂的问题变得较为简单。
 
-  * [activesupport](https://hunzino1.github.io/other/2018/source_code_activesupport)
-  * [activemodel](https://hunzino1.github.io/other/2018/source_code_activemodel)
-  * [activerecord](https://hunzino1.github.io/other/2018/source_code_activerecord)
-  * [actionpack](https://hunzino1.github.io/other/2018/source_code_actionpack)
-  * [actionview](https://hunzino1.github.io/other/2018/source_code_actionview)
+五层因特网协议栈（从上到下）
+---------------------------
 
-需要头脑风暴的知识点
--------------------------------
-+ solr
-+ nginx
-+ memcached
-+ C/S架构，从浏览器发出请求到渲染出页面发生了什么
-+ passenger
-+ cookie和session
-+ rails安全
-+ god
-+ sidekiq
+- 应用层
+- 传输层
+- 网络层
+- 链路层
+- 物理层
 
+五层因特网协议栈介绍
+--------------------
 
-------------------------------------------------------------------------------------
-提高篇
+- 应用层
 
-线程 源码
------------
-* Ruby under a Microscope
-* Ruby with Threads
-* Ruby with Tcp Sockets》
-* Ruby with Unix Processes
+用于支持支持网络应用，运行在不同主机上的进程则使用应用层协议进行通信。主要的协议有：http、ftp、telnet、smtp、pop3等。
 
-服务间通信
----------
-#### 接口
-TODO 介绍这两种接口
-* HTTP restful
-> 介绍HTTP
-> keywords
+- 传输层
 
-* thrift
+负责为信源和信宿提供应用程序进程间的数据传输服务，这一层上主要定义了两个传输协议，传输控制协议即TCP和用户数据报协议UDP。
 
-#### 队列
-TODO Keywords
-* Redis
-* Sidekiq
+- 网络层
 
-#### Kafka
-  TODO Keywords
-  * [基础知识和原理](http://www.infoq.com/cn/articles/kafka-analysis-part-1/)
-  * [官方文档](http://kafka.apache.org/documentation.html)
-  * Rails项目中使用kafka
-  - [poseidon gem](https://github.com/bpot/poseidon)
-  - [poseidon_cluster gem](https://github.com/bsm/poseidon_cluster)
+负责将数据报独立地从信源发送到信宿，主要解决路由选择、拥塞控制和网络互联等问题。
 
-#### 设计原则及实例
-TODO
+- 数据链路层
 
-Web前端
+负责将IP数据报封装成合适在物理网络上传输的帧格式并传输，或将从物理网络接收到的帧解封，取出IP数据报交给网络层。
+
+- 物理层
+
+负责将比特流在结点间传输，即负责物理传输。该层的协议既与链路有关也与传输介质有关
+
+七层因特网协议栈（从上到下）
+----------------------------
+
+- 应用层(Application)
+- 表示层(Presentation)
+- 会话层(Session)
+- 传输层(Transport)
+- 网络层(Network)
+- 数据链路层(Data Link)
+- 物理层(Physical)
+
+和五层结构有什么区别
+
+> 个人理解五层结构就是把7层结构的 应用层/表示层/会话层 合为一个应用层
+
+7层因特网协议栈介绍
+-------------------
+
+#### 一句话概述
+
+> 应用层 指网络操作系统和具体的应用程序，对应WWW服务器、FTP服务器等应用软件　
+> 表示层 数据语法的转换、数据的传送等　
+> 会话层 建立起两端之间的会话关系，并负责数据的传送　
+> 传输层 负责错误的检查与修复，以确保传送的质量，是TCP协议工作的地方。（报文）
+> 网络层 提供了编址方案,IP协议工作的地方(数据包）　
+> 数据链路层 将由物理层传来的未经处理的位数据包装成数据帧　
+> 物理层 对应网线、网卡、接口等物理设备(位)。
+
+- 物理层
+
+物理层(Physical layer)是参考模型的最低层。该层是网络通信的数据传输介质，由连接不同结点的电缆与设备共同构成。主要功能是：利用传输介质为数据链路层提供物理连接，负责处理数据传输并监控数据出错率，以便数据流的透明传输。
+
+- 数据链路层
+
+数据链路层(Data link layer)是参考模型的第2层。 主要功能是：在物理层提供的服务基础上，在通信的实体间建立数据链路连接，传输以“帧”为单位的数据包，并采用差错控制与流量控制方法，使有差错的物理线路变成无差错的数据链路。
+
+- 网络层
+
+网络层(Network layer)是参考模型的第3层。主要功能是：为数据在结点之间传输创建逻辑链路，通过路由选择算法为分组通过通信子网选择最适当的路径，以及实现拥塞控制、网络互联等功能。
+
+- 传输层
+
+传输层(Transport layer)是参考模型的第4层。主要功能是向用户提供可靠的端到端(End-to-End)服务，处理数据包错误、数据包次序，以及其他一些关键传输问题。传输层向高层屏蔽了下层数据通信的细节，因此，它是计算机通信体系结构中关键的一层。
+
+- 会话层
+
+会话层(Session layer)是参考模型的第5层。主要功能是：负责维护两个结点之间的传输链接，以便确保点到点传输不中断，以及管理数据交换等功能。
+
+- 表示层
+
+表示层(Presentation layer)是参考模型的第6层。主要功能是：用于处理在两个通信系统中交换信息的表示方式，主要包括数据格式变换、数据加密与解密、数据压缩与恢复等功能。
+
+- 应用层
+
+应用层(Application layer)是参考模型的最高层。主要功能是：为应用软件提供了很多服务，例如文件服务器、数据库服务、电子邮件与其他网络软件服务。
+
+总结图
 -------
-TODO Keywords, 学习链接
 
-#### 浏览器：
-* 调试工具(firebug, chrome)
-  TODO 学习链接
+![](https://hunzino1.github.io/assets/images/2019/interview/internet1.png)
+![](https://hunzino1.github.io/assets/images/2019/interview/internet2.png)
 
-  * 浏览器渲染原理
-  TODO 学习链接
+面试总结
+=========
 
-#### HTML
-  TODO 学习链接
+常用的协议位于那一层
+--------------------
 
-#### CSS
-  TODO 学习链接
+- IP协议对应于网络层
+- TCP协议对应于传输
+- HTTP协议对应于应用层
+- TCP/IP和HTTP的关系
 
-#### Javascript
-  TODO 学习链接
+关于TCP/IP和HTTP协议的关系，网络有一段比较容易理解的介绍：
 
-#### Ajax
-  TODO 学习链接
+“我们在传输数据时，可以只使用(传输层)TCP/IP协议，但是那样的话，如果没有应用层，便无法识别数据内容。
 
-#### 提高篇
-TODO 链接至前端知识树
-* Web流行框架
-* Node
-* React
-* AngularJs
+如果想要使传输的数据有意义，则必须使用到应用层协议。应用层协议有很多，比如HTTP、FTP、TELNET等，也可以自己定义应用层协议。WEB使用HTTP协议作应用层协议，以封装HTTP文本信息，然后使用TCP/IP做传输层协议将它发到网络上。
 
-数据库 @wanghao
-------
-#### MySQL 进阶
-[初级](https://hunzino1.github.io/other/2018/mysql_basic_knowledge)
-[中级](https://hunzino1.github.io/other/2018/mysql_secondary_knowledge)
-[高级](https://hunzino1.github.io/other/2018/mysql_highest_knowledge)
+Socket
+注意：
+Socket本身并不是协议，而是一个调用接口(API)，它只是提供了一个针对TCP或者UDP编程的接口。
 
-#### TODO 添加数据库设计规范
+socket是对TCP/IP协议的封装和应用,TPC/IP协议是传输层协议，主要解决数据如何在网络中传输
 
-#### 设计 @jingchaowei
-* Sql Cookbook
-TODO: 找电子版
+通过Socket，我们才能使用TCP/IP协议。实际上，Socket跟TCP/IP协议没有必然的联系。Socket编程接口在设计的时候，就希望也能适应其他的网络协议。所以说，Socket的出现只是使得程序员更方便地使用TCP/IP协议栈而已，是对TCP/IP协议的抽象，从而形成了我们知道的一些最基本的函数接口，比如create、listen、connect、accept、send、read和write等等。
 
-#### 索引
-高性能Mysql 第X章
-TODO 学习链接
+Socket和TCP/IP协议的关系
+网络有一段关于socket和TCP/IP协议关系的说法比较容易理解：
 
-#### 慢查询优化
-高性能Mysql 第X章
+“TCP/IP只是一个协议栈，就像操作系统的运行机制一样，必须要具体实现，同时还要提供对外的操作接。
+这个就像操作系统会提供标准的编程接口，比如win32编程接口一样，
+TCP/IP也要提供可供程序员做网络开发所用的接口，这就是Socket编程接口。”
 
-* TODO 优化思路
+HTTP和Socket的关系
+CSDN上有个比较形象的描述：
 
-#### 引擎
-  高性能Mysql 第X章
+HTTP是轿车，提供了封装或者显示数据的具体形式;Socket是发动机，提供了网络通信的能力。
 
-#### 主从结构
-  高性能Mysql 第X章
+利用Socket建立网络连接的步骤
+　　建立Socket连接至少需要一对套接字，其中一个运行于客户端，称为ClientSocket ，另一个运行于服务器端，称为ServerSocket 。
+　　套接字之间的连接过程分为三个步骤：服务器监听，客户端请求，连接确认。
+　　1、服务器监听：服务器端套接字并不定位具体的客户端套接字，而是处于等待连接的状态，实时监控网络状态，等待客户端的连接请求。
+　　2、客户端请求：指客户端的套接字提出连接请求，要连接的目标是服务器端的套接字。
+　　为此，客户端的套接字必须首先描述它要连接的服务器的套接字，指出服务器端套接字的地址和端口号，然后就向服务器端套接字提出连接请求。
+　　3、连接确认：当服务器端套接字监听到或者说接收到客户端套接字的连接请求时，就响应客户端套接字的请求，建立一个新的线程，把服务器端套接字的描述发给客户端，一旦客户端确认了此描述，双方就正式建立连接。
+　　而服务器端套接字继续处于监听状态，继续接收其他客户端套接字的连接请求。
 
-网络安全 @dengqinghua 头脑风暴 sql注入 XSS CSRF 网络安全文档
---------
-#### 学习资源
-* Rails安全(TODO: Rails Security)
-* 白帽子讲web安全(TODO: 添加书目标号)
-* 黑客攻防技术宝典(TODO: 添加书目标号)
+HTTP链接的特点
+　　HTTP协议即超文本传送协议(Hypertext Transfer Protocol )，是Web联网的基础，也是手机联网常用的协议之一，HTTP协议是建立在TCP协议之上的一种应用。
+　　HTTP连接最显著的特点是客户端发送的每次请求都需要服务器回送响应，在请求结束后，会主动释放连接。从建立连接到关闭连接的过程称为“一次连接”。
 
-#### 常见安全问题
-* 数据库注入
-* XSS攻击
-* TODO: 补充其他的攻击类型(可参考运维的安全培训文档)
-
-设计原则
---------
-#### Head first设计模式
-(TODO: 添加书目标号 keywords)
-#### ruby面向对象编程
-(TODO: 添加书目标号 keywords)
-#### 重构
-(TODO: 添加书目标号 keywords)
-#### 敏捷软件开发：原则、模式与实践
-(TODO: 添加书目标号 keywords)
-
-计算机基础
-----------
-#### 操作系统
-  * 深入理解计算机系统
-(TODO: 添加书目标号 keywords)
-
-#### 算法结构
-  * 编程珠玑
-(TODO: 添加书目标号 keywords)
-  * 框架核心算法
-(TODO: 添加书目标号 keywords)
-
-HTTP协议
---------
-#### TCP/IP详解：卷一
-(TODO: 添加书目标号 keywords)
-#### 图解HTTP
-(TODO: 添加书目标号 keywords)
-#### 图解TCP/IP
-(TODO: 添加书目标号 keywords)
-
-缓存框架
---------
-#### 浏览器端
-(TODO keywords, resources)
-#### CDN
-(TODO keywords, resources)
-#### varnish
-(TODO keywords, resources)
-#### nginx
-(TODO keywords, resources)
-#### Rails：object，partial，page，action
-(TODO keywords, resources)
-#### Memcache
-(TODO keywords, resources)
-
-异步处理框架
------------
-(TODO 入门文章, 优化一下目录)
-#### 任务异步处理
-  * Redis
-  * Kafka
-
-#### 页面异步处理
-  * Ajax
-
-搜索框架
--------
-#### Solr
-(TODO 入门文章)
-#### ElasticSearch
-(TODO 入门文章)
-
-服务器框架
-----------
-(TODO 深入研究文章)
-#### Nginx
-(TODO 添加资源)
-
-#### Passenger
-  keywords
-(TODO 官方文档)
-(TODO ruby源码)
-
-TODO: 和运维同学了解服务器端的技术栈
-
+TCP和UDP的区别
+　　1、TCP是面向链接的，虽然说网络的不安全不稳定特性决定了多少次握手都不能保证连接的可靠性，但TCP的三次握手在最低限度上(实际上也很大程度上保证了)保证了连接的可靠性;
+　　而UDP不是面向连接的，UDP传送数据前并不与对方建立连接，对接收到的数据也不发送确认信号，发送端不知道数据是否会正确接收，当然也不用重发，所以说UDP是无连接的、不可靠的一种数据传输协议。
+　　2、也正由于1所说的特点，使得UDP的开销更小数据传输速率更高，因为不必进行收发数据的确认，所以UDP的实时性更好。
+　　知道了TCP和UDP的区别，就不难理解为何采用TCP传输协议的MSN比采用UDP的QQ传输文件慢了，但并不能说QQ的通信是不安全的，
+　　因为程序员可以手动对UDP的数据收发进行验证，比如发送方对每个数据包进行编号然后由接收方进行验证啊什么的，
+　　即使是这样，UDP因为在底层协议的封装上没有采用类似TCP的“三次握手”而实现了TCP所无法达到的传输效率。
