@@ -1,11 +1,11 @@
 ---
 layout: page
-title: FastDFS系列文章
-titlebar: FastDFS
-subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; FastDFS系列文章
-menu: fastdfs
+title: 面试基础知识点总结
+titlebar: interview
+subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 工作，一直找就找到了
+menu: interview
 css: ['blog-page.css']
-permalink: /fastdfs
+permalink: /interview
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /fastdfs
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='FastDFS' or post.keywords contains 'FastDFS' %}
+                {% if post.category=='interview' or post.keywords contains 'interview' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

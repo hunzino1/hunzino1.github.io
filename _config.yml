@@ -103,15 +103,15 @@ labels:
     
   -
     href: /ai_ai.html
-    name: 架构
+    name: AI之道
     
   -
     href: /psychology.html
     name: 心理学
 
   -
-    href: /fastdfs.html
-    name: FastDFS
+    href: /interview.html
+    name: 面试这件小事
 
   -
     href: /mongodb.html
