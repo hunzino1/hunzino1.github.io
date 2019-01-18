@@ -90,8 +90,8 @@ labels:
     name: 技术栈
 
   -
-    href: /share/2017/10/01/resource-sharing.html
-    name: 资源
+    href: /tech.html
+    name: 技术架构实现
 
   -
     href: /life.html
@@ -123,7 +123,7 @@ labels:
 
   -
     href: /open-source.html
-    name: Code   
+    name: Code
 
 # selected articles
 classes:
