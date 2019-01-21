@@ -62,16 +62,12 @@ navs:
     label: Home
 
   -
-    href: /ruby-tree.html
-    label: Ruby-Tree
-
-  -
-    href: /algorithm-tree.html
-    label: Algorithm-Tree
+    href: /stack.html
+    name: 技术栈
 
   -
     href: /ai-road.html
-    label: AI-Road
+    label: AI-算法
 
   -
     href: /link.html
@@ -94,6 +90,14 @@ labels:
     name: 技术架构实现
 
   -
+    href: /ruby-tree.html
+    label: Ruby-Tree
+
+  -
+    href: /algorithm-tree.html
+    label: Algorithm-Tree
+
+  -
     href: /life.html
     name: 故事
 
@@ -102,7 +106,7 @@ labels:
     name: rails技术栈
     
   -
-    href: /ai_ai.html
+    href: /ai-road.html
     name: AI之道
     
   -
@@ -139,7 +143,7 @@ classes:
     describe: 技术栈
 
   -
-    href: /ai_ai.html
+    href: /ai-road.html
     name: 机器学习算法之路
     describe: 小小的我，有大大的梦
 
