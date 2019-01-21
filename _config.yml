@@ -63,7 +63,7 @@ navs:
 
   -
     href: /stack.html
-    name: 技术栈
+    label: 技术栈
 
   -
     href: /ai-road.html
@@ -98,17 +98,17 @@ labels:
     label: Algorithm-Tree
 
   -
-    href: /life.html
-    name: 故事
-
-  -
     href: /rails_stack.html
     name: rails技术栈
-    
+
   -
     href: /ai-road.html
     name: AI之道
-    
+
+  -
+    href: /life.html
+    name: 故事
+
   -
     href: /psychology.html
     name: 心理学
