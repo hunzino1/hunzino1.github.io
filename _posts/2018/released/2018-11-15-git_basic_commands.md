@@ -2,6 +2,8 @@
 layout:     post
 title:      Git常用命令
 no-post-nav: true
+category: rubytree
+tags: [rubytree]
 excerpt: 求真务实
 ---
 
