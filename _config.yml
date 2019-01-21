@@ -86,11 +86,11 @@ labels:
     name: 技术栈
 
   -
-    href: /ruby-tree.html
+    href: /ruby_tree.html
     label: ruby树
 
   -
-    href: /algorithm-tree.html
+    href: /algorithm_tree.html
     label: 算法树
 
   -
