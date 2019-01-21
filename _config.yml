@@ -134,9 +134,9 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /rails_stack.html
-    name: rails技术栈
-    describe: 一个小码农的自我修养
+    href: /stack.html
+    name: 技术栈
+    describe: 技术栈
 
   -
     href: /ai_ai.html
@@ -144,14 +144,14 @@ classes:
     describe: 小小的我，有大大的梦
 
   -
+    href: /rails_stack.html
+    name: rails技术栈
+    describe: 一个小码农的自我修养
+
+  -
     href: /psychology.html
     name: 心理学
     describe: 排毒养颜,天下武功
-
-  -
-    href: /stack.html
-    name: 技术栈
-    describe: 技术栈
 
 
 # ---------------- #
