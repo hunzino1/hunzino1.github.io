@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      技术栈2 - MySQL(8) - Schema与数据类型优化总结(优)
+no-post-nav: true
 category: stack
 tags: [stack]
 excerpt: 

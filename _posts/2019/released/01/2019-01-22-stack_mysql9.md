@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      技术栈2 - MySQL(9) - 优化sql总结(2)
+no-post-nav: true
 category: stack
 tags: [stack]
 excerpt: 
