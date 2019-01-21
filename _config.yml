@@ -70,6 +70,14 @@ navs:
     label: AI-算法
 
   -
+    href: /ruby-tree.html
+    label: ruby树
+
+  -
+    href: /algorithm-tree.html
+    label: 算法树
+
+  -
     href: /link.html
     label: Link
 
@@ -84,14 +92,6 @@ labels:
   -
     href: /stack.html
     name: 技术栈
-
-  -
-    href: /ruby_tree.html
-    label: ruby树
-
-  -
-    href: /algorithm_tree.html
-    label: 算法树
 
   -
     href: /rails_stack.html
