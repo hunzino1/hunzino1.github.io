@@ -28,6 +28,8 @@ excerpt: 每日三省吾身，这件小事能坚持多久。
 ----------
 
 ### 小标题索引（3以上都会出现在导航栏中）
+
+![](https://hunzino1.github.io/assets/images/2018/kafka/log_consumer.png)
 #### 小标题
 
 章节2
