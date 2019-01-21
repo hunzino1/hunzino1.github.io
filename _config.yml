@@ -86,24 +86,20 @@ labels:
     name: 技术栈
 
   -
-    href: /tech.html
-    name: 技术架构实现
-
-  -
     href: /ruby-tree.html
-    label: Ruby-Tree
+    label: ruby树
 
   -
     href: /algorithm-tree.html
-    label: Algorithm-Tree
+    label: 算法树
 
   -
     href: /rails_stack.html
     name: rails技术栈
 
   -
-    href: /ai-road.html
-    name: AI之道
+    href: /interview.html
+    name: 面试这件小事
 
   -
     href: /life.html
@@ -114,8 +110,8 @@ labels:
     name: 心理学
 
   -
-    href: /interview.html
-    name: 面试这件小事
+    href: /tech.html
+    name: 技术架构实现
 
   -
     href: /mongodb.html
