@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      技术栈1 - Redis(6) - redis进阶
+no-post-nav: true
 category: stack
 tags: [stack]
 excerpt: 
