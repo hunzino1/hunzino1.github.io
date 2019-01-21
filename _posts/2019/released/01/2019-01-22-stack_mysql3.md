@@ -31,8 +31,6 @@ NOTE: 下面是学习计划建议
 MySQL基本命令(建议学习时间: 2天)
 -------------------------------
 ### MySQL环境搭建
-为了统一MySQL的使用版本, 请在CentOS虚拟机中使用MySQL.
-点击[这里](http://git.tuan800-inc.com/ruby/zhe800_zhaoshang/wikis/install_CentOS_in_Windows_using_Vagrant) 查看在Windows中安装CentOS系统.
 
 进入MySQL server
 
@@ -175,8 +173,8 @@ end
 
 MySQL规范(建议学习时间: 2天)
 --------------------------
-1. [表结构设计规范](http://git.tuan800-inc.com/ruby/zhe800_zhaoshang/wikis/mysql_table_design)
-2. [运维规范](http://git.tuan800-inc.com/ruby/zhe800_zhaoshang/wikis/mysql_specification)
+1. [表结构设计规范](https://hunzino1.github.io/stack/2019/01/22/mysql_table_design)
+2. [运维规范](https://hunzino1.github.io/stack/2019/01/22/mysql_specification)
 
 分析和解决慢查询问题(建议学习时间: 1天)
 ---------------------------------------
