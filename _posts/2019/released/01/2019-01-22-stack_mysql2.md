@@ -417,7 +417,7 @@ SELECT MAX(id) max_id FROM `pay_account_logs`  WHERE (created_at <= '2015-08-14 
 平均查询时间 10sec
 
 
-####六、不合适的order by
+#### 六、不合适的order by
 
 ```
 EXPLAIN SELECT SQL_NO_CACHE id,
@@ -609,7 +609,7 @@ possible_keys: idx_user_name,idx_of_loggable_type_and_type_id
 
 
 
-####八、检索条件，没有按照索引列查询
+#### 八、检索条件，没有按照索引列查询
 
 索引，中范围查询什么的，是否能使用到索引，详细演示一下
 
