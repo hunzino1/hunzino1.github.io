@@ -181,7 +181,7 @@ public class FactoryPatternDemo {
 下面的例子主要看类FactoryProducer， FactoryProducer调用了超级工厂，生产出了一个颜色 + 形状的组合。
 这是一个工厂结合产品。
 
-![](https://hunzino1.github.io/assets/images/2019/design_pattern/abstractfactory_pattern_uml_diagram.jpg)
+![](https://hunzino1.github.io/assets/images/2019/design_pattern/abstractfactory_pattern_uml_diagram.jpg = 830x)
 
 - 步骤1 工厂类定义
 
