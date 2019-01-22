@@ -388,7 +388,7 @@ public class AbstractFactoryPatternDemo {
 
 ## 2. 单例模式的几种实现方式
 
-**只记忆双加锁和枚举定义吧**
+<font color="red">**只记忆双加锁和枚举定义吧**</font>
 
 > 一般情况下，不建议使用第 1 种和第 2 种懒汉方式，建议使用第 3 种饿汉方式。只有在要明确实现 lazy loading 效果时，才会使用第 5 种登记方式。
 >
@@ -555,4 +555,4 @@ public enum Singleton {
 }
 ```
 
-调用 Singleton.INSTANCE
+> 调用 Singleton.INSTANCE
