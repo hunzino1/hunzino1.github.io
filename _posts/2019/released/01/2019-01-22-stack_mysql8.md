@@ -11,7 +11,7 @@ excerpt:
 ### Schema与数据类型优化
 
 
-####一、范式
+#### 一、范式
 
 **码是数据系统中的基本概念。所为码就是能唯一标识实体的属性。**
 
@@ -45,7 +45,7 @@ MySQL
 
 [解释一下关系数据库的第一第二第三范式](http://www.zhihu.com/question/24696366)
 
-####二、通常情况下选择正确存储数据的最小类型数据
+#### 二、通常情况下选择正确存储数据的最小类型数据
 
 查看表空间的命令
 show table status like 't1' \G
@@ -64,7 +64,7 @@ FROM information_schema.TABLES WHERE table_schema LIKE 'database';
 
 [MySQL表空间及索引的查看](http://www.cnblogs.com/jiaxiaoai/archive/2011/07/18/2109298.html)
 
-####三、手机号应该用什么类型的存储
+#### 三、手机号应该用什么类型的存储
 int 的最大值为21亿， 2**31，所以并不能保存手机号的百亿位数据。
 
 
@@ -93,7 +93,7 @@ mysql>
 
 ```
 
-####四、尽量避免使用NULL
+#### 四、尽量避免使用NULL
 
 + null 是一个未知的值
 
@@ -172,7 +172,7 @@ http://www.codeceo.com/article/sql-null.html
 
 
 
-####五、DATETIME 和 TIMESTAMP 的区别
+#### 五、DATETIME 和 TIMESTAMP 的区别
 
 DATETIME：
 
@@ -191,7 +191,7 @@ TIMESTAMP:
 + TIMESTAMP列的默认值为NOT NULL 这和其他数据类型不一样。
 
 
-####六、数据库中价格应该怎么存的，为什么不用浮点数，如何证明浮点数不精确
+#### 六、数据库中价格应该怎么存的，为什么不用浮点数，如何证明浮点数不精确
 
 ```
 mysql> CREATE TABLE test (c1 float(10,2),c2 decimal(10,2));
@@ -244,7 +244,7 @@ mysql> select * from test;
 
 
 
-####七、int 后面的数值和 varchar 后面的数值的区别
+#### 七、int 后面的数值和 varchar 后面的数值的区别
 
 + MySQL 可以为整数类型指定宽度，例如INT（11）， 对大多数应用来说是没有意义的。它不会限制值的合法范围，只是规定了MySQL 的一些交互工具，用来显示字符的个数。对于存储和计算来说，INT(1) 和 INT(20) 是相同的
 
@@ -281,7 +281,7 @@ mysql>
 
 
 
-####八、varchar 和 char 的区别
+#### 八、varchar 和 char 的区别
 
 VARCHAR：
 
@@ -320,7 +320,7 @@ SELECT LENGTH(char_col1), LENGTH(varchar_col1), CONCAT("'", varchar_col2, "'") F
 ```
 
 
-####九、varchar 最大的存储空间
+#### 九、varchar 最大的存储空间
 
 字符是指计算机中使用的字母、数字、汉字和符号。
 
@@ -349,7 +349,7 @@ varchar(n) 其中n表示字符，无论汉字和英文，MySQL都能存入n个�
 [MySQL 数据库 varchar 到底可以存多少个汉字，多少个英文呢?我们来搞搞清楚](https://ruby-china.org/topics/24920)
 
 
-####十、数据库碎片是什么东西，有什么影响
+#### 十、数据库碎片是什么东西，有什么影响
 
 MySQL具有相当多不同种类的存储引擎来实现列表中的数据存储功能。**每当MySQL从你的
 列表中删除了一行内容，该段空间就会被留空。而在一段时间内的大量删除操作，
@@ -375,7 +375,7 @@ Infomation时发现有一个日志表数据大小和索引大小有915M，但实
 [mysql-suipian-youhua](http://pengbotao.cn/mysql-suipian-youhua.html)
 
 
-####十一、什么情况下会使用binary 查询
+#### 十一、什么情况下会使用binary 查询
 
 
 **BINARY 不是函数，是类型转换运算符，它用来强制它后面的字符串为一个二进制字符串，可以理解为在字符串比较的时候区分大小写**
@@ -457,12 +457,12 @@ Empty set (0.00 sec)
 
 
 
-####十二、VARCHAR（5） 和 VARCHAR（200）存储上的区别，排序上的区别
+#### 十二、VARCHAR（5） 和 VARCHAR（200）存储上的区别，排序上的区别
 
 + 相比较而言，varchar(5) 所占用的空间相对比较小。
 + 在排序时，varchar(5) 所占用的空间相对比 varchar(200) 要少。
 
-####十三、1000w的数据，如果在ORDER BY 中使用到varchar(1000)这个列，并且查询扫描整个表，为了排序就需要超过30GB的临时表
+#### 十三、1000w的数据，如果在ORDER BY 中使用到varchar(1000)这个列，并且查询扫描整个表，为了排序就需要超过30GB的临时表
 
 最坏情况下的长度分配对于排序也是一样的。
 意思就是在排序的时候使用的是分配长度的最大长度。
@@ -474,7 +474,7 @@ Empty set (0.00 sec)
 3000 * 10 000 000 = 30 000 000 000 B = 30GB
 ```
 
-####十四、排序 使用 FIND_IN_SET 进行按顺序排序
+#### 十四、排序 使用 FIND_IN_SET 进行按顺序排序
 
 ```
   mysql>  explain
@@ -503,12 +503,12 @@ Empty set (0.00 sec)
 
 ```
 
-####十五、通用的设计实践，在“查找表”时采用整数主键而避免采用基于字符串的值进行关联
+#### 十五、通用的设计实践，在“查找表”时采用整数主键而避免采用基于字符串的值进行关联
 
   由于根据字符串的关联，在查找排序的时候，需要占用更多的空间，消耗更多的资源。
   [theory-of-mysql-index](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 
-####十六、选择标识符
+#### 十六、选择标识符
 
   + 标识列选择数据类型时，应该选择跟关联表中的对应列一样的类型。
 
@@ -557,7 +557,7 @@ possible_keys: idx_cid
   [MySQL 为什么需要一个主键](https://ruby-china.org/topics/26352)
 
 
-####十七、特殊类型数据
+#### 十七、特殊类型数据
 
 MySQL 提供INET_ATON()和INET_NEOA()函数在IP地址上进行转换
 
@@ -571,7 +571,7 @@ MySQL 提供INET_ATON()和INET_NEOA()函数在IP地址上进行转换
   1 row in set (0.02 sec)
 ```
 
-####十八、JOIN 驱动表
+#### 十八、JOIN 驱动表
 
 + inner join驱动顺序由优化器自己制定，如果优化器选择有误可以使用straight_join 自己指定驱动顺序以达到优化的目的。
 
@@ -597,7 +597,7 @@ MySQL 提供INET_ATON()和INET_NEOA()函数在IP地址上进行转换
 
 [join-query-in-mysql](http://hidba.ga/2014/09/26/join-query-in-mysql/)
 
-####十九、从父表冗余一些数据到子表的理由是排序的需要。
+#### 十九、从父表冗余一些数据到子表的理由是排序的需要。
 
 工单87334
 
@@ -665,7 +665,7 @@ possible_keys: index_deals_on_tb_shop_id_and_id,idx_bg_tag_pub_beg,idx_bg_tag_pu
         Extra: Using where
 ```
 
-####二十、MySQL 视图
+#### 二十、MySQL 视图
 
 + 什么是视图？视图是由查询结果形成的一张虚拟表。
 + 什么时候要用到视图？如果某个查询结果出现的非常频繁，也就是说，要经常拿到这个查询结果来做子查询。
@@ -683,11 +683,11 @@ possible_keys: index_deals_on_tb_shop_id_and_id,idx_bg_tag_pub_beg,idx_bg_tag_pu
 [MySQL视图学习总结](http://www.cnblogs.com/wangtao_20/archive/2011/02/24/1964276.html)
 [MySQL之视图](http://www.cnblogs.com/zzwlovegfj/archive/2012/06/23/2559596.html)
 
-####二十一、更快地读，更慢的写。高性能数据库的设计
+#### 二十一、更快地读，更慢的写。高性能数据库的设计
 
 为了提升查询的速度，经常会需要见一些额外的索引，增加冗余列，甚至是创建缓存表和汇总表。这些方法会增加写查询的负担，也需要额外的维护任务，但是在设计高性能数据库时，这些都是最常见的技巧。虽然写操作变得更慢了，但更显著地提高了读操作的性能
 
-####二十二、加快ALTER TBALE 操作的速度
+#### 二十二、加快ALTER TBALE 操作的速度
 
 **ALTER TABLE操作需要花费数小时时间甚至数天才能完成。**
 **大部分ALTER TABLE操作将导致MySQL服务中断。**
@@ -711,7 +711,7 @@ ALTER TABLE 允许使用 ALTER COLUMN、MODIFY COLUMN和CHANGE COLUMN语句修�
 
 
 
-####二十三、给大表添加索引或字段该如何操作
+#### 二十三、给大表添加索引或字段该如何操作
 
 **在构建索引的工作被延迟到数据完全载入以后，这个时候已经可以通过排序来构建索引了。这样做会快很多，并且使得索引树的碎片更少、更紧凑。**
 
