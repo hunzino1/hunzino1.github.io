@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈2 - MySQL(6) - MySQL规范
+title:      技术栈2 - MySQL(2) - MySQL基本规范
 category: stack
 tags: [stack]
 excerpt: 

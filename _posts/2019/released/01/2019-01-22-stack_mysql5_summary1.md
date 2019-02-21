@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈2 - MySQL(7) - mysql学习总结
+title:      技术栈2 - MySQL(5) - mysql学习总结1
 category: stack
 tags: [stack]
 excerpt: 

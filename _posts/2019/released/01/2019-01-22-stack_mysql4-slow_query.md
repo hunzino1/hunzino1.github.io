@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈2 - MySQL(2) - 慢查询
+title:      技术栈2 - MySQL(4) - 慢查询
 category: stack
 tags: [stack]
 excerpt: 

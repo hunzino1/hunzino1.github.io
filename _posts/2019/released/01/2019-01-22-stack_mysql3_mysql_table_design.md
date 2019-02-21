@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      技术栈2 - MySQL(5) - 表结构设计规范
+title:      技术栈2 - MySQL(3) - 表结构设计规范
 category: stack
 tags: [stack]
 excerpt: 
