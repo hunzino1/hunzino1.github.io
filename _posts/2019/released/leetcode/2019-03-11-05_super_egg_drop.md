@@ -126,6 +126,14 @@ Hence, we needed 2 moves in the worst case to know what F is with certainty.
 二、ruby方案
 ----------
 
+之前的做法陷入了思路误区，其实还是没有理解题意，蛋碎还是不碎的判断是怎么判断的？（cry、cry）
+
+不过思考方向错误还是欠缺经验。
+
+最小移动次数，很明显是最优解，应该向着动态规划思考；
+
+而我是用了2分，这个并不是能保证最优解的方法；
+
 ```ruby
 ```
 
@@ -147,38 +155,5 @@ null
 五、经典解法，算法思想
 ----------
 
-剑指offer题目，如果是静态语言并没有include?方法，只能借助题目特点。
-
 ```ruby
-##
-# 矩阵上下、左右有序， 可以从右上角或者左下角开始遍历；
-# 以为有序，与第一个元素相比较，就可以一次去掉一行或者一列不符合的数据
-# (以左下角为例)
-# @param {Integer[][]} matrix
-# @param {Integer} target
-# @return {Boolean}
-def search_matrix(matrix, target)
-  if matrix.empty?
-    return false
-  end
-
-  row = matrix.size - 1
-  cols = matrix[0].size
-  col = 0
-  while row >= 0 && col < cols do
-    array = matrix[row]
-    if array[col] == target
-      return true
-    # 说明该行都大于target，向上递减
-    elsif array[col] > target
-      row -= 1
-      next
-    # 说明该列都小于target，向前递加
-    else
-      col += 1
-    end
-  end
-
-  return false
-end
 ```
