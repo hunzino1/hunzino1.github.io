@@ -155,5 +155,126 @@ null
 五、经典解法，算法思想
 ----------
 
+### 动态规划思路1
+
+```html
+
+首先明确一点，动态规划是取的最优解，而本题取得是最坏情况下尝试的次数，所以应用到动态规划上取得应该是max，而非min。
+
+记k是鸡蛋个数， n是楼层数；
+
+1、简单情形
+
+鸡蛋数 k = 0 或者 楼层数 n = 0, 那么最坏的情况就是尝试0次；
+若鸡蛋数 k = 1, 对于n层楼来说最坏情况是尝试n次， 因为可能在n层时鸡蛋才碎；
+
+2、状态转换公式
+
+记f(k, n) 表示k个鸡蛋n层楼所需要的最坏尝试次数；
+
+假设鸡蛋从第i层扔下，有两种情况：
+
+（1） 蛋碎， 鸡蛋剩余k-1个，而此时需要考虑i层以下的楼层(0...i)，因为i以上肯定会碎。 故问题变成了 f(k-1, i-1)
+（2） 不碎， 鸡蛋剩余k个， 此时需要考虑i层以上的楼层(i+1..n), 故问题变成了 f(k, n - i), (这里都是楼层数，而不是楼高，剩余需排查的楼层数就是n - i)
+
+对于以上两种情况，最坏应该取最大值， 故得到一下状态转移公式：
+
+f(k, n) = 1 + min{ max( f(k-1, i-1), f(k, n-i) ) } (1 <= i <= n)
+
+初始状态： 
+f(0, n) = 0
+f(k, 0) = 0
+f(1, n) = n
+
+如下递归模式会超出时间限制，需要使用记忆数组。
+```
+
 ```ruby
+# 超出时间限制
+# @param {Integer} k
+# @param {Integer} n
+# @return {Integer}
+def super_egg_drop(k, n)
+  if k == 0 || n == 0
+    return 0
+  end
+
+  if k == 1
+    return n
+  end
+
+  min = -1
+  i = 1
+  while i <= n do
+    breaken = super_egg_drop(k-1, i-1)
+    unbreak = super_egg_drop(k, n-i)
+    min_time = (breaken > unbreak ? breaken : unbreak) + 1
+    if min > min_time || min < 0
+      min = min_time
+    end
+    i += 1
+  end
+
+  min
+end
+
+
+# 非递归测试内部错误
+# @param {Integer} k
+# @param {Integer} n
+# @return {Integer}
+def super_egg_drop(k, n)
+  if k == 0 || n == 0
+    return 0
+  end
+
+  if k == 1
+    return n
+  end
+
+  drop_eggs = Array.new(k+1, Array.new(n+1, 0))
+  (1..n).to_a.each do |index|
+    drop_eggs[1][index] = index
+  end
+
+  (1..n).to_a.each do |floor|
+    (2..k).to_a.each do |egg|
+      min = drop_eggs[egg-1][floor]
+      (1..floor).to_a.each do |i|
+        breaken = drop_eggs[egg-1][i-1]
+        unbreak = drop_eggs[egg][floor-i]
+        cur_min = (breaken > unbreak ? breaken : unbreak) + 1
+        if cur_min < min
+          min = cur_min
+        end
+      end
+
+      drop_eggs[egg][floor] = min
+    end
+  end
+
+  drop_eggs[k][n]
+end
+```
+
+### 动态规划思路2
+
+```html
+1、状态转移方程
+
+记 f(k, step) k是鸡蛋个数， step表示尝试的次数， f(k, step) 表示k个鸡蛋，尝试step次最多能确认多少层楼。 显然step <= n n为楼层数。
+
+(1) 初始状态
+鸡蛋个数为0的时候  f(0, step) = 0
+尝试次数为1是，判断最高楼层最多是1层 f(j, 1) = 1 j >= 1
+
+(2) 转移方程
+f(i, j) 分两种情况：
+  (1) 鸡蛋碎掉，尝试次数减一，鸡蛋减一，我们可以通过i - 1个鸡蛋和 j - 1次尝试找到最高不会碎掉的楼层。故最高楼层为 f(i-1, j-1)
+  (2) 鸡蛋不碎，尝试次数减一，          可以继续向上检查楼层，所以最高楼层数应该是 f(i-1, j-1) + f(i, j-1) + 1;  蛋碎检测的最高楼层数 + 1(当前楼层) + f(i, j-1)
+
+因此，这次扔鸡蛋，我们最多能测出 dp[k-1][m-1] (摔碎时能确定的层数) + dp[k][m-1] (没摔碎时能确定的层数) + 1 (本层) 层的结果。
+
+故 f(i, j) = n;  知道最小的j满足楼层为n， j即为所求。
+状态转移方程： f(i,j) = f(i−1,j−1) + f(i−1,j) + 1
 ```
