@@ -19,8 +19,9 @@ Ruby关于 Array 和 String 的一些实用方法
 常用方法汇总
 ---------------------
 
-1. [常量定义](https://www.jianshu.com/p/ca4dbe764451)
+### 1. [常量定义](https://www.jianshu.com/p/ca4dbe764451)
 
+```html
     Float::INFINITY   # 无限大
     Float::NaN        # Not a number
 
@@ -34,8 +35,9 @@ Ruby关于 Array 和 String 的一些实用方法
     final int MIN_EXPONENT = -126; 一个有限float数值的最小指数值
     final int SIZE = 32; 一个float类型数值占用的比特数
     final int BYTES = SIZE / Byte.SIZE; 一个float类型数值占用的字节数
+```
 
-2. 归并排序
+### 2. 归并排序
 
 ```ruby
 # 归并排序的思想，简而言之，将数组一分为二，分别排序后合并。
@@ -60,13 +62,13 @@ class Array
 end
 ```
 
-3. 幂运算
+### 3. 幂运算
 
 ```ruby
 2 ** 2 = 4
 ```
 
-4. ruby 值传递 or 引用传递
+### 4. ruby 值传递 or 引用传递
 
 ```ruby
 array = Array.new(8, Array.new(8, 0))   #这种创建二维数组的方式,二维数组的引用都是同一个
@@ -82,7 +84,7 @@ m = Matrix.zero(8).to_a
 Array.new(8) {[0]*8}
 ```
 
-5. 读取输入
+### 5. 读取输入
 
 ```ruby
 gets
@@ -94,7 +96,7 @@ p a
 array
 ---------------
 
-1. 多维数组降维
+### 1. 多维数组降维
 
 ```ruby
 array.flatten
@@ -117,7 +119,7 @@ a = [ 1, 2, [3, [4, 5] ] ]
 a.flatten!(1) #=> [1, 2, 3, [4, 5]]
 ```
 
-2. 一维数组转换成二维数组
+### 2. 一维数组转换成二维数组
 
 ```ruby
 ["a", "b", "c", "d"].each_with_index.map{ |v, i| [v, i] }
@@ -130,7 +132,7 @@ arr.zip(0..arr.size)
 #以上结果都是  [['a', 0], ['b', 1], ['c', 2], ['d', 3]]
 ```
 
-3. array的sort方法、reverse方法、shuffle方法
+### 3. array的sort方法、reverse方法、shuffle方法
 
 ```ruby
 >> a.sort  #数组排序
@@ -141,13 +143,13 @@ arr.zip(0..arr.size)
 => [17, 42, 8]
 ```
 
-4. 将整型数组转换成字符串数组
+### 4. 将整型数组转换成字符串数组
 
 ```ruby
 array.map { |x| x.to_s }
 ```
 
-5. array交集
+### 5. array交集
 
 解决步骤：
 
@@ -177,7 +179,7 @@ array1 & array2   # [2,3,4,8], 自动去重
 (array1 & array2).flat_map { |n| [n]*[array1.count(n), array2.count(n)].min } #=> [2,2,2,3,4,8]  保留重复项
 ```
 
-6. 数组全排列
+### 6. 数组全排列
 
 ```ruby
 class Array
@@ -190,7 +192,7 @@ class Array
 end
 ```
 
-7. 其他常用操作
+### 7. 其他常用操作
 
 ```ruby
 1、取数
@@ -218,7 +220,7 @@ a.sort_by{|e| e[:t]}  #根据t升序排列
 a.sort_by{|e| -e[:t]}  #根据t降序排列
 ```
 
-8. stack,queue操作
+### 8. stack,queue操作
 
 ```ruby
 >> a.unshift 6 # 把6添加到数组前面
@@ -248,11 +250,11 @@ d2.transpose     #=> [["January", "February", "March"], [2007, 2007, 2007]]
 string
 -----------------
 
-1. 字符串是否是数字
+### 1. 字符串是否是数字
 
     str.to_i.to_s == str
 
-2. 进制转换
+### 2. 进制转换
 
 ```ruby
 016进制到10进制:
