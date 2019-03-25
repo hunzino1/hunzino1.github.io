@@ -78,6 +78,10 @@ navs:
     label: 算法树
 
   -
+    href: /better.html
+    label: Be Better
+
+  -
     href: /link.html
     label: Link
 
