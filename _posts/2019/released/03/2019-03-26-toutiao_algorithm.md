@@ -1,8 +1,104 @@
 2 给定一个数组序列, 需要求选出一个区间, 使得该区间是所有区间中经过如下计算的值最大的一个：
 
 区间中的最小数 * 区间所有数的和最后程序输出经过计算后的最大值即可，不需要输出具体的区间。如给定序列  [6 2 1]则根据上述公式, 可得到所有可以选定各个区间的计算值:
-```ruby
+```java
+import java.util.Scanner;
+public class Main {
+public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int [] input  =new int [size];
+        for(int i=0;i<input.length;i++){
+            input[i] = sc.nextInt();
+        }
 
+        long max=input[0]*input[0];
+        for(int i=0;i<size;i++){
+             long sum=input[i];
+             int min=input[i];
+            for(int j=i+1;j<size;j++){
+                if(input[j]==0){
+                    break;
+                }
+                sum+=input[j];
+                if(input[j]<min){
+                    min = input[j];
+                }
+                if(min*sum>max){
+                    max=min*sum;
+                }
+            }
+        }
+        System.out.println(max);
+    }
+}
+```
+
+```ruby
+单调栈
+
+```
+def find_max(nums)
+  length = nums.size
+  # 预处理，先将累计和保存；若在出栈时再计算区间和，超时AC 80%
+  pre_sum = [nums[0]]
+  1.upto(nums.size - 1).each do |i|
+    pre_sum[i] = pre_sum[i-1] + nums[i]
+  end
+
+  # 先将第一个数字下标压入栈
+  index_satck = [0]
+  max_multi = 0
+  cur_index = 1
+  # 数组遍历结束但是栈不为空时仍要继续
+  while cur_index < length || (cur_index == n && index_satck.size > 0) do
+    # 当栈为空或者当前数大于等于栈顶元素，下标入栈
+    if cur_index < length && (index_satck.empty? || nums[cur_index] >= nums[index_stack[-1]])
+      index_satck << cur_index
+      cur_index += 1
+    # 当数组遍历结束或者当前数小于栈顶元素时
+    else
+      # 区间最小值为栈顶元素，出栈
+      min_num = nums[index_stack.pop]
+      # 如果此时栈为空了，表示已出栈的数字比前面所有数字都小，左边界下标也就是0，否则左边界下标为（下一个元素的索引+1）
+      cur_sum = pre_sum[cur_index - 1] - (index_stack.empty? ? pre_sum[index_stack[-1]] : 0)
+      cur_max = min_num * cur_sum
+      max_multi = max_multi > cur_max ? max_multi : cur_max
+    end
+  end
+
+  max_multi
+end
+
+```ruby
+size = gets.to_i
+input = []
+0.upto(size - 1).each do |index|
+  input << gets.to_i
+end
+
+max = input[0] ** 2
+
+0.upto(size - 1).each do |index|
+  sum = input[index]
+  min = input[index]
+
+  (index + 1).upto(size - 1).each do |next_index|
+    break if input[next_index] == 0
+
+    sum += input[next_index]
+
+    if input[next_index] < min
+      min = input[next_index]
+    end
+
+    if min * sum > max
+      max = min * sum
+    end
+  end
+end
+
+p max
 ```
 1、P为给定的二维平面整数点集。定义 P 中某点x，如果x满足 P 中任意点都不在 x 的右上方区域内（横纵坐标都大于x），则称其为“最大的”。求出所有“最大的”点的集合。（所有点的横坐标和纵坐标都不重复, 坐标轴范围在[0, 1e9) 内）
 
