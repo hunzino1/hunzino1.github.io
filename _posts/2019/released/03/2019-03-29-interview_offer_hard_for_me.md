@@ -442,7 +442,46 @@ end
 
 中序遍历是有序的。
 
+递归思路不太懂，整个非递归思路的：
+
 ```ruby
+# 主要思路是遍历每个节点都是先将该节点自身以及最左节点依次入栈
+# 然后每次出栈一个节点之后重复上述步骤
+#
+def convert(root)
+  return nil if root.nil?
+  # p 是遍历指针
+  # pre 指向上一次遍历的节点
+  p, pre = root, nil
+
+  stack = []
+  # 只有第一次有用，找双向链表的头结点，用root标识
+  is_head = true
+
+  while !p.nil? || !stack.empty? do
+    # 当前节点，以及最左节点依次进栈
+    while !p.nil? do
+      stack.push p
+      p = p.left
+    end
+
+    # 取最后一个左节点
+    p = stack.pop
+    if is_head
+      root = p
+      pre = p
+      is_head = false
+    else
+      pre.last = p
+      p.pre = pre
+      pre = p
+    end
+
+    p = p.right
+  end
+
+  root
+end
 ```
 
 ### 面试题37： 序列化二叉树
