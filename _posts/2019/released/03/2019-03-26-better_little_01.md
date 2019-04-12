@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      每日一件001 - 常见知识点汇总
-category: better
-tags: [better]
+title:      头条广告部门面试题总结
+category: interview
+tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-每日一件001 - 常见知识点汇总
+头条广告部门面试题总结
 ============================
 
 面试求职，不止要求的是本职工作，而且还需要有比较扎实的基础知识。

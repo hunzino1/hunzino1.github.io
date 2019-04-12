@@ -60,9 +60,7 @@ end
 3、 下一个序列
 ------------------------------
 
-思路：
-
-![参考](https://blog.csdn.net/qq_33594380/article/details/82377923)
+思路： [参考](https://blog.csdn.net/qq_33594380/article/details/82377923)
 
 说说下一个序列，下一个序列求解的思想非常简单：
 

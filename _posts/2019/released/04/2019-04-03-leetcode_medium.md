@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      leetcode所有medium题解
-category: algorithm
-tags: [algorithm]
+category: better
+tags: [better]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
@@ -278,3 +278,8 @@ end
 62. 不同路径
 ---------------
 
+--------------------------------------------------
+
+###  未完待续
+
+-------------------------------------------------

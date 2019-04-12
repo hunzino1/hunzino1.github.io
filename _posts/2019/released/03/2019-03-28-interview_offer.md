@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      剑指offer题目思路总结
-category: better
-tags: [better]
+category: interview
+tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
