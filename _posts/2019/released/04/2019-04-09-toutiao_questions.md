@@ -62,7 +62,7 @@ end
 
 思路：
 
-[参考](https://blog.csdn.net/qq_33594380/article/details/82377923)
+![参考](https://blog.csdn.net/qq_33594380/article/details/82377923)
 
 说说下一个序列，下一个序列求解的思想非常简单：
 
@@ -74,7 +74,7 @@ end
 
 （4）将i 右边的部分排成正序
 
-[动图](https://hunzino1.github.io/assets/images/2019/better/2019_04/Next_Permutation.gif)
+![动图](https://hunzino1.github.io/assets/images/2019/better/2019_04/Next_Permutation.gif)
 
 ```ruby
 def next_str(str)
