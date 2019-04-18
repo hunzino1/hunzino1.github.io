@@ -58,7 +58,6 @@ public static void main(String args[]){
 ```ruby
 单调栈
 
-```
 def find_max(nums)
   length = nums.size
   # 预处理，先将累计和保存；若在出栈时再计算区间和，超时AC 80%
@@ -90,6 +89,7 @@ def find_max(nums)
 
   max_multi
 end
+```
 
 ```ruby
 size = gets.to_i
