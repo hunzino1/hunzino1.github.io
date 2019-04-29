@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      leetcod(061) - 旋转链表
-category: algorithm
-tags: [algorithm]
+category: better
+tags: [better]
 excerpt: 坚持这件小事，20190424打卡。
 ---
 

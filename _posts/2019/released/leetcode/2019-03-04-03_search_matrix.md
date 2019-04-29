@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      leetcod(003) - 搜索二维矩阵 II
-category: algorithm
-tags: [algorithm]
+category: better
+tags: [better]
 excerpt: 坚持这件小事，20190311打卡。
 ---
 

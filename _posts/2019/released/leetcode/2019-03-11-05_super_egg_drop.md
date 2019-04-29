@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      leetcod(005) - 鸡蛋掉落
-category: algorithm
-tags: [algorithm]
+category: better
+tags: [better]
 excerpt: 坚持这件小事，20190311打卡。
 ---
 
