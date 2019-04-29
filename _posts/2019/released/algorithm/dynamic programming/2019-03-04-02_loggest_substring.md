@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      动态规划 例题二、 最长上升子序列(百练2757)
-category: algorithmtree
-tags: [algorithmtree]
+category: better
+tags: [better]
 excerpt: 动态规划
 ---
 

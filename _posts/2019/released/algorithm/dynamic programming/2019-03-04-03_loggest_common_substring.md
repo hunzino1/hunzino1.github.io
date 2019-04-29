@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      动态规划 例题三、 最长公共子序列
-category: algorithmtree
-tags: [algorithmtree]
+category: better
+tags: [better]
 excerpt: 动态规划
 ---
 
