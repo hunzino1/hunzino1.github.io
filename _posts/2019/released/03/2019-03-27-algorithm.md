@@ -36,6 +36,10 @@ excerpt: 一个人有多努力，就会有多幸运。
 3.代码
 -----------------
 
+trie树，建立10叉树
+
+[思路1](https://blog.csdn.net/qq_36946274/article/details/81638367)
+
 ```java
 public static int lexicalOrder(int n , int k ) {
         int curr = 1;
