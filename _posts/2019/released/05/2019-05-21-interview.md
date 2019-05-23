@@ -1,12 +1,12 @@
 ---
 layout:     post
 title:      常考面试点总结
-category: stack
-tags: [stack]
+category: interview
+tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-kafka概述
+常考面试点总结
 =======================================
 
 本篇博文主要是对面试中尝尝问到的面试点进行总结，并不是实践中的理解，而是针对于面试，而真正的
