@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      设计一个电商平台积分兑换系统
-category: stack
-tags: [stack]
+category: interview
+tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
@@ -286,3 +286,9 @@ cache记录红包个数，原子操作进行个数递减，到0表示被抢光�
 
 答：最后会有一个take all操作。另外还有一个对账来保障。
 ```
+
+4 [现代IM系统中消息推送和存储架构的实现](https://www.jianshu.com/p/6a5e7611435d)
+
+- TCP连接
+- 心跳机制
+- kafka推送
