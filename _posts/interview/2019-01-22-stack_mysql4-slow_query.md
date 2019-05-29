@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      技术栈2 - MySQL(4) - 慢查询
-category: stack
-tags: [stack]
+category: interview
+tags: [interview]
 excerpt: 
 ---
 
