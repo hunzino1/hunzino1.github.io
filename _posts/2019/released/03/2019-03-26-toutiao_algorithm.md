@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      头条面试 - 找出[1,n]范围内按照字典排序的最小第k个值
-category: interview
-tags: [interview]
+title:      找出[1,n]范围内按照字典排序的最小第k个值
+category: better
+tags: [better]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
