@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      面试总结1 - 中断
-category: interview
-tags: [interview]
+title:      计算机网络 - 中断
+category: stack
+tags: [stack]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-面试总结1 - 中断
+计算机网络 - 中断
 =======================================
 
 [参考一下](https://blog.csdn.net/zhangskd/article/details/21992933)

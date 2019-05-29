@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      面试题总结1
+title:      面试总结1
 category: interview
 tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-面试题总结1
+面试总结1
 ============================
 
 面试求职，不止要求的是本职工作，而且还需要有比较扎实的基础知识。

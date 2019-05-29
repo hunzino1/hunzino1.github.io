@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      设计一个电商平台积分兑换系统
+title:      学会设计一个系统
 category: interview
 tags: [interview]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-[设计一个电商平台积分兑换系统](https://maimai.cn/article/detail?fid=1252495809&efid=0fjwMCDG17Y5XvRkRRwE4g)
+[学会设计一个系统](https://maimai.cn/article/detail?fid=1252495809&efid=0fjwMCDG17Y5XvRkRRwE4g)
 =======================================
 
 类似的这类系统设计题目很多，比如：
