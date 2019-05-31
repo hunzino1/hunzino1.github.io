@@ -1,14 +1,14 @@
 ---
 layout:     post
-title:      动态规划 例题三、 最长公共子序列
+title:      动态规划 - 最长公共子序列(不连续)
 category: better
 tags: [better]
 excerpt: 动态规划
 ---
 
 
-动态规划 例题二、 最长公共子序列
-=======
+动态规划 - 最长公共子序列(不连续)
+=====================================
 
 描述
 --------
@@ -19,14 +19,15 @@ excerpt: 动态规划
 
 示例：
 
-1、可以不连续
-
-2、可以为0
-
-![](https://hunzino1.github.io/assets/images/2019/algorithm/dynamic_programming/3%E3%80%81%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/1.png)
+![longest_common_sub](https://hunzino1.github.io/assets/images/2019/algorithm/dynamic_programming/longest_common_sub/longest_common_sub.png)
 
 分析：
 --------
+
+**注意点：**
+
+  1. 可以不连续
+  2. 公共长度可以为0
 
 解决动归问题，最重要的就是确定问题的状态。
 
