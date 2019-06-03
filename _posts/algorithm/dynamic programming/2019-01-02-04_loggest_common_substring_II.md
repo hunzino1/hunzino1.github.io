@@ -22,7 +22,7 @@ excerpt: 坚持这件小事，20190424打卡。
 
 **不能使用暴力搜索方法。一个长度为n的序列拥有 2的n次方个子序列，它的时间复杂度是指数阶，太恐怖了。**
 
-动归还是可以使用上面的状态，而且情况更加简单
+动归还是可以使用[上题](https://hunzino1.github.io/better/2019/01/02/03_loggest_common_substring.html)的状态，而且情况更加简单
 
 maxLen(i, j) 表示字符串a以i为结尾子串，字符串b以j为结尾的子串的最大公共子串
 
@@ -55,7 +55,6 @@ def longest_common_sub(s1, s2)
     end
   end
 
- # dp.flatten.max
-  dp
+  dp.flatten.max
 end
 ```
