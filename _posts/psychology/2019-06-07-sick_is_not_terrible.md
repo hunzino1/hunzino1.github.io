@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      生病不可怕
-category: life
-tags: [life]
+category: psychology
+tags: [psychology]
 excerpt: 因为自己心眼小，容不下的事就暂时先放这里吧。
 ---
 
