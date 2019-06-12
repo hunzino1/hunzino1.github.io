@@ -114,8 +114,8 @@ labels:
     name: 心理学
 
   -
-    href: /tech.html
-    name: 技术架构实现
+    href: /spring.html
+    name: spring
 
   -
     href: /mongodb.html

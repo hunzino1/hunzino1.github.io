@@ -1,11 +1,11 @@
 ---
 layout: page
 title: 实际开发技术
-titlebar: tech
+titlebar: spring
 subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; 理论用于实战
-menu: tech
+menu: spring
 css: ['blog-page.css']
-permalink: /tech
+permalink: /spring
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /tech
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='tech' or post.keywords contains 'tech' %}
+                {% if post.category=='spring' or post.keywords contains 'spring' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
