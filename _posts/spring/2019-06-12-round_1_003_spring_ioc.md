@@ -9,23 +9,24 @@ excerpt: 一个人有多努力，就会有多幸运。
 spring入门(003) - [第二章 spring IOC](https://www.imooc.com/video/3665)
 =======================================
 
-[github地址]()
-
 本章专题主要包括：
 
 1. 接口及面向接口编程
 2. 什么是IOC
 3. **Spring的Bean配置(xml/注解) -- 重点**
 4. Bean的初始化
-5. **Spring的常用注入方式 -- 重点**
 
 本章分为两个部分，本章节会从概念和使用上介绍IOC和Bean容器；
 
 第3节是讨论spring怎么获得一个bean，并没有涉及bean之间的注入。
 
-而bean之间存在依赖关系时
+而bean之间存在依赖关系时则放在下一章节讨论，
 
-第4节则是讨论bean之间存在依赖关系时如何实现注入，获取组装后的bean。
+目的是这一节单纯学好怎么去获取一个bean，
+
+而下一节是学习获取一个注入的bean，
+
+分开两节是为了思路分的更清晰，注入是注入，单纯获取bean并不是注入。
 
 -----------------------------------------
 
@@ -171,21 +172,89 @@ public class Main {
 
 ### 3.2 基于注解的实现方式
 
+[参考](https://www.cnblogs.com/qinjf/p/9052445.html)
+
+[github地址](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter2_annotate)
+
+配置文件如下：
+
+和xml中bean配置不同，注解方式会使用context:component-scan将带有注解标志的类、方法、属性等加载到容器中。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 开启注解的扫描。到配置的包里面扫描类、方法、属性上面是否有注解 -->
+    <context:component-scan base-package="com.shj.pojo"></context:component-scan>
+
+</beans>
+```
+
+定义了一个POJO类TestBeanClass：
+spring会将带有注解的类加载到容器中
+
+```java
+@Component("user")
+public class User {
+    private int id;
+    private String name;
+}
+```
+调用，直接调用对应的bean即可
+
+```java
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+    User user = (User) context.getBean("user");
+```
+
 4 spring bean的初始化
 ------------------------------------------------
 
-note
+什么是bean的初始化？ 就是spring容器实例化一个bean。
+
+根据上一章节所述，实例化bean主要是bean容器和context容器：
+
+- org.springframework.beans:  有一个BeanFactory类，加载初始化bean（对象实例）。
+- org.springframework.context:    有一个ApplicationContext类，用于获取bean对象(实例对象)。
+
+5 note
 ---------------------------------------------------
 
-<span id="spring_xml">**1. spring xml的文件头说明**</span>
+### <span id="spring_xml">5.1 spring xml的文件头说明</span>
 
 ```html
 ```
 
-**2. 新建一个spring项目**
+### 5.2. 新建一个spring项目
 
 这次新建项目也闹出不少乌龙，虽然没必要，但事无巨细的也总结了吧。
 
-[看这里]()
+[看这里](https://hunzino1.github.io/spring/2019/06/13/create_spring_project.html)
 
+### 5.3 ApplicationContext的三种xml获取方式
 
+1. 本地文件
+2. Classpath
+3. web应用中依赖servlet或listener。
+
+![xml](https://hunzino1.github.io/assets/images/2019/spring/xml.png)
+
+### 5.4 单元测试
+
+> 单元测试很重要的，所以有必要总结一下, 不过使用单元测试套路很单一
+
+以chapter2_annotate中使用单元测试为例：
+
+```html
+    1、 引入junit包
+    2、 创建一个公共类UnitTestBase类，包含的就两点点：加载XML创建容器(before)、销毁容器(after)
+    3、 使用时测试类继承UnitTestBase， 直接传入xml后，super.getBean()即可获取实例类
+```
+
+详细信息见代码
+
+![junit](https://hunzino1.github.io/assets/images/2019/spring/junit.png)
