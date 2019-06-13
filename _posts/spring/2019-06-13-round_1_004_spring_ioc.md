@@ -17,5 +17,81 @@ spring入门(004) - 第二章 spring 注入方式
 
 注入： 说白了，就是一个bean的成员变量还是一个bean， 获取bean的一种特殊形式罢了。
 
+Spring注入： IOC容器加载bean的时候，自动对Bean的各成员变量完成赋值（初始化）。
+
 -----------------------------------------
 
+1 XML配置方式
+----------------------------------------
+
+[github](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter2_ioc)
+
+通过xml注入bean有两种方式： 设值注入 和 构造注入
+
+### 1.1 设值注入
+
+xml文件：
+
+```xml
+在xml中声明了两个Bean，在加载xml的时候会自动创建这两个对象。
+property： 属性
+      name = "beInjectClass"
+           是说第一个bean中有一个名字是injectionDAO的成员变量。
+      ref = "injectClass"
+           是说引用的是 injectionDAO这个bean（这是第二个bean的id）
+
+设值注入就是Spring容器自动调用set方法为第一个bean进行赋值，
+所以需要beInjectClass中需要有一个setInjectClass()方法。
+（这个是与平时的set一样的，只不过由spring调用了）
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beInjectClass" class="com.shj.pojo.BeInjectClass">
+        <!--设值注入-->
+        <property name="injectClass" ref="injectClass"/>
+    </bean>
+
+    <bean id="injectClass" class="com.shj.pojo.InjectClass"></bean>
+</beans>
+```
+
+### 1.2 构造注入
+
+xml文件：
+
+```xml
+
+constructor-arg：
+      在BeInjectClass中必须定义一个构造器，构造器的参数是injectClass（大小写必须与xml一致）。
+
+这也是和平时一样，只不过是Spring调用了构造函数进行注入而已。
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beInjectClass" class="com.shj.pojo.BeInjectClass">
+        <!--构造注入-->
+        <constructor-arg name="injectClass" ref="injectClass"/>
+    </bean>
+
+    <bean id="injectClass" class="com.shj.pojo.InjectClass"></bean>
+</beans>
+```
+
+### 1.3 总结
+
+```HTML
+1、 上述的构造器方法或者set方法都是被注入的bean的方法；
+2、 本例只是为了方便理解，其实考虑解耦，构造器和set传入的都应该是接口定义
+3、 对于构造器和setter的形参名字，一定要与xml配置的名字一致，否则出错。
+4、 No default constructor found;
+使用设值注入或者注解的时候，如果存在构造函数，Spring要提供显式的默认构造函数，否则会出错。
+```
+
+2 基于注解的注入实现
+------------------------------------------
