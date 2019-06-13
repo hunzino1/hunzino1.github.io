@@ -243,6 +243,15 @@ public class User {
 
 ![xml](https://hunzino1.github.io/assets/images/2019/spring/xml.png)
 
+```java
+  new ClassPathXmlApplicationContext("classpath:spring-context.xml")
+  classpath:是什么鬼？
+
+  1、冒号后面不能留空格
+  2、classpath:应该会被截取，然后读取到spring-context.xml文件
+      具体细节在进阶阶段可以好好解读
+```
+
 ### 5.4 单元测试
 
 > 单元测试很重要的，所以有必要总结一下, 不过使用单元测试套路很单一
@@ -258,3 +267,4 @@ public class User {
 详细信息见代码
 
 ![junit](https://hunzino1.github.io/assets/images/2019/spring/junit.png)
+
