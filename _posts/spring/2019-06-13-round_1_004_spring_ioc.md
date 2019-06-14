@@ -95,3 +95,50 @@ constructor-arg：
 
 2 基于注解的注入实现
 ------------------------------------------
+
+[github](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter2_ioc_annotate)
+
+没什么可说的，直接用Autowired注入即可，看代码
+
+xml配置文件
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.shj.pojo"></context:component-scan>
+
+</beans>
+```
+
+pojo类定义
+
+```java
+@Component("injectClass")
+public class InjectClass {
+    private int id;
+    private String name;
+}
+
+@Component("beInjectClass")
+public class BeInjectClass {
+
+    @Autowired
+    private InjectClass injectClass;
+    private int id;
+}
+```
+
+使用
+
+```java
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
+        BeInjectClass beInjectClass = (BeInjectClass)context.getBean("beInjectClass");
+        System.out.println(beInjectClass.toString());
+```
