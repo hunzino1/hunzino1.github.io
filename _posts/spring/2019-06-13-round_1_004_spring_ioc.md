@@ -138,7 +138,9 @@ public class BeInjectClass {
 使用
 
 ```java
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
-        BeInjectClass beInjectClass = (BeInjectClass)context.getBean("beInjectClass");
-        System.out.println(beInjectClass.toString());
+   ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
+   BeInjectClass beInjectClass = (BeInjectClass)context.getBean("beInjectClass");
+   System.out.println(beInjectClass.toString());
 ```
+
+[参考博客](https://www.cnblogs.com/xiaostudy/p/9534697.html)
