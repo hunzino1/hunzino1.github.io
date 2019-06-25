@@ -87,17 +87,20 @@ scope作用域配置选项：
 
 **除了1、2，后面三项都是http选项，了解即可**
 
+```java
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+    BeInjectClass bean1 = (BeInjectClass) context.getBean("beInjectClass");
+    BeInjectClass bean2 = (BeInjectClass) context.getBean("beInjectClass");
+    ApplicationContext context1 = new ClassPathXmlApplicationContext("spring-context.xml");
+    BeInjectClass bean3 = (BeInjectClass) context1.getBean("beInjectClass");
+    System.out.println(bean1.hashCode() == bean2.hashCode())    //true(singleton) false(prototyp)
+    System.out.println(bean1.hashCode() == bean3.hashCode())    //false
+```
+
 ```html
 1 singleton：单例模式，一个bean容器中只存在一份。
     什么叫一个bean容器？
-      ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
-      BeInjectClass bean1 = (BeInjectClass) context.getBean("beInjectClass");
-      BeInjectClass bean2 = (BeInjectClass) context.getBean("beInjectClass");
-      ApplicationContext context1 = new ClassPathXmlApplicationContext("spring-context.xml");
-      BeInjectClass bean3 = (BeInjectClass) context1.getBean("beInjectClass");
-      System.out.println(bean1.hashCode() == bean2.hashCode())    //true
-      System.out.println(bean1.hashCode() == bean3.hashCode())    //false
-
+      <bean id="beInjectClass" class="com.shj.pojo.BeInjectClass" scope="singletin">
       如上bean1、bean2是在context同一个容器获取的，如果beInjectClass配置的是singleton，
       此时bean1、bean2应该是同一个对象实例，即hashCode相同；
       而bean3是在另一个容器context1中获取，这样和bean1、bean2就不是在同一容器中，
@@ -106,8 +109,9 @@ scope作用域配置选项：
     其实理解了bean在每一个容器中都会注册一份，这就很容易理解了。
 
 2 prototype:
-
+    <bean id="beInjectClass" class="com.shj.pojo.BeInjectClass" scope="prototype">
     每次要使用（请求）一个  bean 时都会创建一个新的实例，使用完之后就会回收，所以destory不生效。
+    所以上述的bean1、bean2也是不同的两个实例。
 
 ====================与 web 应用有关的作用域说明===========================
 
@@ -117,6 +121,7 @@ scope作用域配置选项：
 4 session： 同上。
 
 5 global session： 基于portlet（spring web组件）的web中有效。（其他同session）
-    portlet是一些系统集成（如首页、财务系统），在不同系统之间跳转时session已经发生变化了，所以global session可以保证这种跨session访问。
+    portlet是一些系统集成（如首页、财务系统），在不同系统之间跳转时session已经发生变化了，
+    所以global session可以保证这种跨session访问。
 
 ```
