@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      spring入门(005) - 第三章&第四章 - spring bean装配(xml配置方式)
+title:      spring入门(005) - 第三章&第四章 - spring bean装配
 category: spring
 tags: [spring]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-spring入门(005) - 第三章&第四章- spring bean装配(xml配置方式)
+spring入门(005) - 第三章&第四章- spring bean装配
 =======================================
 
 第三章和第四章都是讲spring bean装配

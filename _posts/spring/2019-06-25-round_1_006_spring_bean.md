@@ -9,59 +9,114 @@ excerpt: 一个人有多努力，就会有多幸运。
 spring入门(006) - 第三章(1) - spring bean装配(xml配置方式) - bean的配置及作用域
 =======================================
 
-第三章和第四章都是讲spring bean装配
+通过本篇博客，您可以了解到
 
-第三章是xml配置方式下的装配实现
+1. spring bean的配置选项
+2. spring bean的作用域
+3. spring bean的生命周期
 
-第四章是基于注解的spring bean装配
-
-然后，什么是bean装配？ 就是IOC容器管理bean，然后我们用的时候利用注入组装出存在依赖的bean。
-
-> 说的概念再抽象，其实也只是做了一件事，就是
-
-```html
-class A {
-  B b;
-}
-
-class B {}
-
-A B这些对象就是bean，然后都是由spring容器管理，
-假如我们此时需要一个A的实例，那样spring会自动组装A（将B注入到A）
-这就是spring bean装配。
-
-
-以上的概念再复杂也不管我们的事，我们只是操作了获取一个A的实例这一个操作。
-```
+如有错误之处，还望指正。
 
 -----------------------------------------
 
-1、 内容汇总
+3.1 spring bean的配置选项
 -----------------------------------------
 
-1. bean配置项
-2. bean的作用域
-3. bean的生命周期
-4. bean的自动装配
-5. Resource & ResourceLoader
+```xml
+<beans>
+  <bean id="beInjectClass" class="com.shj.pojo.BeInjectClass" scope="singletin">
+     <!--设值注入-->
+     <property name="injectClass" ref="injectClass"/>
 
-```html
-1. bean配置项
-    就是xml bean标签的一些属性设置，比如id，class，scope等；
-
-2. bean的作用域
-    就是spring容器中bean是单例还是非单例配置，scope属性
-
-3. bean的生命周期
-    一个bean实例在spring容器中的状态转换；
-
-4. bean的自动装配
-    Autowired
-
-5. Resource & ResourceLoader
-    IOC加载资源文件(xml配置文件)时用到的类，也就是说用上面两个类读取xml
-    当然也可以用来获取其他的资源配置信息
+     <!--构造注入-->
+     <constructor-arg name="injectClass" ref="injectClass"/>
+  </bean>
+</beans>
 ```
 
+如上是一个bean的xml配置，bean常见的配置项如下：
 
-这里第三章和第四章都是按照以上的顺序来展开学习，在此总结现有一个整体认识。
+1. id： 唯一标识
+2. class： 实例化哪一个类（路径）
+3. scope：作用域
+4. constructor arguments： 构造器参数 （constructor-arg）
+5. properties：属性
+6. Autowiring mode： 自动配置模式
+7. lazy-initialization mode： 懒加载模式
+8. Initialization/destruction method：初始化和销毁方法。
+
+```html
+以下只有class配置项是必须想。
+
+1. id： 唯一标识
+      人为的给每一个bean配置项分配一个id，唯一，重复会报错；
+      所以根据id能够100%唯一确定bean实例；
+
+2. class： 实例化哪一个类（路径）
+      如上例，是bean实例的路径，也能唯一确定实例化哪个类。
+
+3. scope：作用域
+      即指定bean在IoC容器中是单例形式(singleton)或者非单例(prototype)
+
+4. constructor arguments： 构造器参数 （constructor-arg）
+      上例中的constructor-arg，指利用构造函数注入当前bean以来的bean
+      就是上例中的injectClass，使用构造函数注入到beInjectClass中，再返回beInjectClass这个实例；
+
+5. properties：属性
+      和constructor-arg一样，只不过是使用set方法
+
+constructor-arg注入类一定要有构造函数，properties一定要有set方法定义，这个很容易理解。
+
+6. Autowiring mode： 自动配置模式
+7. lazy-initialization mode： 懒加载模式
+8. Initialization/destruction method：初始化和销毁方法。
+```
+
+3.2 bean的作用域scope
+--------------------------------------------
+
+> 上例中bean配置中的scope属性
+
+scope作用域配置选项：
+
+1. singleton: 单例
+2. prototype: 非单例
+3. request
+4. session
+5. global session
+
+**除了1、2，后面三项都是http选项，了解即可**
+
+```html
+1 singleton：单例模式，一个bean容器中只存在一份。
+    什么叫一个bean容器？
+      ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+      BeInjectClass bean1 = (BeInjectClass) context.getBean("beInjectClass");
+      BeInjectClass bean2 = (BeInjectClass) context.getBean("beInjectClass");
+      ApplicationContext context1 = new ClassPathXmlApplicationContext("spring-context.xml");
+      BeInjectClass bean3 = (BeInjectClass) context1.getBean("beInjectClass");
+      System.out.println(bean1.hashCode() == bean2.hashCode())    //true
+      System.out.println(bean1.hashCode() == bean3.hashCode())    //false
+
+      如上bean1、bean2是在context同一个容器获取的，如果beInjectClass配置的是singleton，
+      此时bean1、bean2应该是同一个对象实例，即hashCode相同；
+      而bean3是在另一个容器context1中获取，这样和bean1、bean2就不是在同一容器中，
+      所以不受scope="singleton"的约束，是新的一个对象实例。
+
+    其实理解了bean在每一个容器中都会注册一份，这就很容易理解了。
+
+2 prototype:
+
+    每次要使用（请求）一个  bean 时都会创建一个新的实例，使用完之后就会回收，所以destory不生效。
+
+====================与 web 应用有关的作用域说明===========================
+
+3 request：
+    每次http请求 创建的实例只在当前 request内有效，新的 request请求会重新生成一份实例，同一个request请求同一份实例。
+
+4 session： 同上。
+
+5 global session： 基于portlet（spring web组件）的web中有效。（其他同session）
+    portlet是一些系统集成（如首页、财务系统），在不同系统之间跳转时session已经发生变化了，所以global session可以保证这种跨session访问。
+
+```
