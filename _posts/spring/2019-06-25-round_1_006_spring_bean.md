@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      spring入门(006) - 第三章(1) - spring bean装配(xml配置方式) - bean的配置及作用域
+title:      spring入门(006) - 第三章(1) - spring bean装配(xml配置方式) - bean的基本配置/作用域/生命周期
 category: spring
 tags: [spring]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-spring入门(006) - 第三章(1) - spring bean装配(xml配置方式) - bean的配置及作用域
+spring入门(006) - 第三章(1) - spring bean装配(xml配置方式) - bean的基本配置/作用域/生命周期
 =======================================
 
 通过本篇博客，您可以了解到
