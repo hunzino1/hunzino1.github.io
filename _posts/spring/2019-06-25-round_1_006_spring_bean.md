@@ -132,6 +132,8 @@ scope作用域配置选项：
 3.3 bean的生命周期
 --------------------------------------------
 
+[demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter3_init_destory)
+
 一个bean的生命周期包括四个阶段：
 
 1. 定义
