@@ -75,6 +75,8 @@ constructor-arg注入类一定要有构造函数，properties一定要有set方�
 3.2 bean的作用域scope
 --------------------------------------------
 
+[demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter3_scope)
+
 > 上例中bean配置中的scope属性
 
 scope作用域配置选项：
@@ -116,7 +118,8 @@ scope作用域配置选项：
 ====================与 web 应用有关的作用域说明===========================
 
 3 request：
-    每次http请求 创建的实例只在当前 request内有效，新的 request请求会重新生成一份实例，同一个request请求同一份实例。
+    bean只存活在一个request请求周期内。
+    每次http请求创建的实例只在当前request内有效，新的request请求会重新生成一份实例，同一个request请求同一份实例。
 
 4 session： 同上。
 
@@ -125,3 +128,170 @@ scope作用域配置选项：
     所以global session可以保证这种跨session访问。
 
 ```
+
+3.3 bean的生命周期
+--------------------------------------------
+
+一个bean的生命周期包括四个阶段：
+
+1. 定义
+2. 初始化
+3. 使用
+4. 销毁
+
+```html
+1. 定义
+  即bean在xml中的配置，id、class、scope等，这就是对一个bean的定义；
+
+2. 初始化
+  ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+  以上就是将所有bean进行实例化加载到容器中，实例化就是初始化；
+
+3. 使用
+  context.getBean()
+  获取bean实例之后的操作，这个就是业务逻辑操作了。
+
+4. 销毁
+  随着容器的关闭而销毁。
+```
+
+其中bean的定义和使用没必要再说明，以下详细说明一下bean的初始化和bean的销毁。
+
+**我的理解是，这里说的并不是初始化和销毁方法，而是进行初始化或者销毁时**
+
+**我们可以配置一些方法，在执行初始化或者销毁时同时也执行我们的自定义方法。**
+
+**所以应该叫做初始化伴随方法或者销毁伴随方法。**
+
+### 3.3.1 bean的初始化
+
+三种添加初始化方法的方式：
+
+#### 3.3.1.1 实现InitializingBean接口，重写afterPropertiesSet方法
+
+```xml
+  <bean id="initBean" class="com.shj.pojo.InitBean"></bean>
+```
+
+```java
+public class InitBean implements InitializingBean {
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("init method using interface overwriting");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        context.getBean("initBean");    //init method using interface overwriting
+    }
+}
+```
+
+#### 3.3.1.2 xml bean配置中添加init-method， 自定义初始化伴随方法
+
+如下，定义了一个init方法，所以com.shj.pojo.InitXMLBean中一定要有init方法定义
+```xml
+<bean id="initXML" class="com.shj.pojo.InitXMLBean" init-method="init"></bean>
+```
+
+```java
+public class InitXMLBean {
+    public void init() {
+        System.out.println("init method using xml of int-methods");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        context.getBean("initXML");    // init method using xml of int-methods
+    }
+}
+```
+
+#### 3.3.1.3 配置全局的默认的初始化方法
+
+**上面是bean维度上(xml文件bean标签)配置一个初始化方法，**
+
+**其实可以在beans标签上配置一个全局的初始化方法，default-init-method属性**
+
+```xml
+<beans ... default-init-method="init">
+    <bean id="defaultInit" class="com.shj.pojo.DefaultInitBean"></bean>
+</beans>
+```
+
+```java
+public class DefaultInitBean {
+    public void init() {
+        System.out.println("default init method using golbal int-methods");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        context.getBean("defaultInit");
+    }
+}
+```
+
+### 3.3.2 bean的销毁
+
+> 其实和bean的初始化一样都是一样的套路，这里只写总结，详细见demo
+
+#### 3.3.2.1 实现DisposableBean接口，重写destroy方法
+
+```java
+public class DestroyBean implements DisposableBean {
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("destroy method using implements DisposableBean");
+    }
+}
+```
+
+#### 3.3.2.2 xml bean标签添加destroy-method属性
+
+```xml
+<bean id="destroyXMLBean" class="com.shj.pojo.DestroyXMLBean" destroy-method="destroy"></bean>
+```
+
+```java
+public class DestroyXMLBean {
+    public void destroy() {
+        System.out.println("destroy method using bean xml destroy-method");
+    }
+}
+```
+
+#### 3.3.2.3 xml beans标签添加全局default-destroy-method属性
+
+```xml
+<beans default-init-method="init" default-destroy-method="destroy">
+  <bean id="destroyGlobal" class="com.shj.pojo.DestroyGlobal"></bean>
+</beans>
+```
+
+```java
+public class DestroyGlobal {
+    public void destroy() {
+        System.out.println("destroy method using bean xml destroy-method");
+    }
+}
+```
+
+### 3.3.3 总结对比
+
+优先级：
+
+**接口实现 > init-method/default-method**
+
+当存在自定义的初始化或者销毁方法时，Beans中的default属性被跳过，不再执行。
+
+default-init-method、 default-destroy-method是一个可选方法，可以不写对应的函数体也不会报错
+
