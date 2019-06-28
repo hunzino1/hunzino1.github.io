@@ -120,3 +120,5 @@ public class AwareBean implements BeanNameAware, ApplicationContextAware {
     }
 }
 ```
+
+[一个简单的博客](https://www.jianshu.com/p/c5c61c31080b)
