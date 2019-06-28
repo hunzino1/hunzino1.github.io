@@ -65,6 +65,8 @@ spring会加载时自动注入
 
 ### 2.2 byName的实现方式
 
+[demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter3_autowiring)
+
 如下，beans标签添加default-autowire
 
 然后bean标签中不在需要property或者constructor-arg属性。
