@@ -110,3 +110,44 @@ public class Service {
 
 }
 ```
+
+### 2.3 byType和Constructor的实现方式
+
+byType和Constructor的实现方式和 byName的方式大同小异
+
+下面就只说不同点：
+
+#### 2.3.1 xml beans标签
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+// byType
+<beans default-autowire="byType">
+// Constructor
+<beans default-autowire="Constructor">
+</beans>
+```
+
+#### 2.3.1 java代码
+
+**byType和byName方式完全一样，只不过是是按照class类型查找注入**
+
+**Constructor 则代码按照构造器参数的类型查找**
+
+1. 必须有构造器方法
+2. 查找按照构造器参数类型匹配，其实还是按照class路径去查找
+
+```java 
+public class AutowiringBean {
+    private InjectBean injectBean;
+
+    public AutowiringBean(InjectBean injectBean) {
+        this.injectBean = injectBean;
+    }
+}
+```
+
+### 2.4 总结
+
+1. byName方式set方法参数名称要和bean标签id一致 (不一致的话set会不执行，但是不报错，只是没注入)
+2. Constructor按照参数类型查找其实就是按照class属性，当然可以省略id或者id与参数名不一致。
