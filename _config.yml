@@ -118,6 +118,10 @@ labels:
     name: spring
 
   -
+    href: /base.html
+    name: 常用配置
+
+  -
     href: /mongodb.html
     name: MongoDB
 
