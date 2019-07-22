@@ -135,5 +135,105 @@ public class AutowiredCollectionBean {
 
 比如了list，我们希望获取到的集合bean有序，这一在bean定义上添加@Order注解或者实现org.springframework.core.Ordered接口。
 
-3 demo
+### 2.3 demo
+
+[demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter4_autowired2)
+
+3 @Qualifier & @Resource
 ------------------------------------
+
+### 3.1 @Qualifier
+
+@Autowired可能会有以下场景
+
+- 场景一： 如2.2一样注解一个集合；
+- 场景二： 注解一个接口，接口有多个实现类
+
+此时我们可以使用@Qualifier注解，只获取特定的bean
+
+```java
+    // 只获取id为beanClassOne的实现类
+    @Autowired
+    @Qualifier("beanClassOne")
+    private BeanInterface beanInterface;
+```
+
+### 3.2 @Qualifier的使用举例
+
+如下，按照类型(BeanInterface)自动装配时,可能会存在多个实例，即多个实现类。
+
+@Qualifier可以缩小范围或者唯一获取。
+
+```java
+    @Autowired
+    private BeanInterface beanInterface;
+```
+
+**举例一: 可以使用在变量上** 
+
+```java
+    // 只获取id为beanClassOne的实现类
+    @Autowired
+    @Qualifier("beanClassOne")
+    private BeanInterface beanInterface;
+```
+
+**举例二： 可以使用在方法上**
+```java
+    @Autowired
+    public void function(@Qualifier("beanClassOne") BeanInterface beanInterface) {
+      ....
+    }
+```
+
+**举例三： 可以使用在集合类型变量上**
+
+```java
+    // 只获取id为beanClassOne的实现类
+    @Autowired
+    @Qualifier("beanClassOne")
+    private List<BeanInterface> beanInterfaceList;
+```
+
+#### XML配置实现方式
+
+这样其实直接用id就好，没意义
+
+```xml
+<bean class="com.shj.Class">
+  <qualifier value="main"/>
+</bean>
+```
+
+#### 总结
+
+**可以看出，@Qualifier 是和 @Autowired 配套使用的。**
+
+### 3.3 @Resource
+
+JSR-250标准提供了@Resource注解。
+
+**本质区别：  @Autowired按byType自动注入，@Resource默认按 byName自动注入**
+
+所以 @Autowired + @Qualifier的组合并不可取， 使用@Resource替代更为合适。
+
+不过二者还是有各自适合的特定场景。
+
+1. 首先上述集合类、Map或者存在意义差异(多态) 无法使用@Autowired， 可以使用@Resource；
+2. @Autowired 更适用于属性变量(fields)、构造器(Constructors)或者多参数方法(multi-arguments methods)中，用@Qualifier缩小范围
+3. 而@Resource更适合于只有一个参数的setter方法，或者成员变量。
+
+### 3.4 自定义qualifier注解
+
+如下，@Test和@Qualifier作用一至了。
+
+```java
+  @Qualifier
+  public @interface Test {
+
+  }
+```
+
+### 3.5 demo
+
+[demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/chapter4_autowired2)
