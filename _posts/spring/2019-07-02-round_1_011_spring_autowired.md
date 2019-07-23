@@ -223,6 +223,11 @@ JSR-250标准提供了@Resource注解。
 2. @Autowired 更适用于属性变量(fields)、构造器(Constructors)或者多参数方法(multi-arguments methods)中，用@Qualifier缩小范围
 3. 而@Resource更适合于只有一个参数的setter方法，或者成员变量。
 
+```java
+@Resource(name="baseDao")
+privateBaseDao baseDao;
+```
+
 ### 3.4 自定义qualifier注解
 
 如下，@Test和@Qualifier作用一至了。
