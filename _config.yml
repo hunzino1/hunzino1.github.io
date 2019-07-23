@@ -66,8 +66,8 @@ navs:
     label: 技术栈
 
   -
-    href: /ai-road.html
-    label: AI-算法
+    href: /pay.html
+    label: 支付
 
   -
     href: /ruby-tree.html
@@ -145,11 +145,6 @@ classes:
     href: /stack.html
     name: 技术栈
     describe: 技术栈
-
-  -
-    href: /ai-road.html
-    name: 机器学习算法之路
-    describe: 小小的我，有大大的梦
 
   -
     href: /rails_stack.html
