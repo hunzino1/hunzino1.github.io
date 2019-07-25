@@ -156,7 +156,9 @@ context:property-placeholder加载资源文件还是不可缺少的。
 
 另一个就是一个输出验证。
 
-**所以@Bean配合上面两个注解，实际场景中很实用**
+所以**用@Bean配合上面两个注解，在实际场景中很实用**
+
+总结一下使用顺序：
 
 1. @configuration 声明类是配置文件
 2. @ImportResource 加载jdbc.properties资源文件
@@ -187,6 +189,8 @@ public class JdbcConfig {
     }
 }
 
+
+// ===============================================================
 
     @Bean("dataSource")
     public DataSource getDataSource() {
