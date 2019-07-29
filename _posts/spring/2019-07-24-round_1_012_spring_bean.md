@@ -216,3 +216,20 @@ public class JdbcConfig {
 #### 2.2.4 demo
 
 [demo](https://github.com/hunzino1/spring_round_one/tree/master/muke/cheapter4_bean/src/main/java/com/shj/jdbc/config)
+
+3 @Bean 和 @Scope
+-----------------------------------------------
+
+@Bean获取的默认是单例的bean，不过也可以使用@Scope去设置。
+
+```java
+@Cinfiguration
+public class MyConfig {
+
+  @Bean
+  @Scope("prototype")
+  public Service userService() {
+    return new Service();
+  }
+}
+```
