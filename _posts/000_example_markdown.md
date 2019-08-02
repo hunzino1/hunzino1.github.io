@@ -1,3 +1,11 @@
+---
+layout:     post
+title:      markdown格式实例
+category: stack
+tags: [stack]
+excerpt: 
+---
+
 markdown格式实例
 ================
 
