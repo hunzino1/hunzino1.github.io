@@ -62,7 +62,7 @@ spring入门 - 第五章 - spring AOP - AOP基本概念及特点
 
 ```
 
-![aop](assets/images/2019/spring/aop.png)
+![aop](https://hunzino1.github.io/assets/images/2019/spring/aop.png)
 
 2 AOP的几个基本概念
 ---------------------
@@ -151,7 +151,7 @@ spring入门 - 第五章 - spring AOP - AOP基本概念及特点
 
 就是切面和对象（或者程序）连接起来，这就是一个AOP动作了吧, 然后创建一个被通知对象。
 
-![concept](assets/images/2019/spring/concept.png)
+![concept](https://hunzino1.github.io/assets/images/2019/spring/concept.png)
 
 3 通知 Advice 
 ----------------------------
@@ -181,7 +181,7 @@ spring入门 - 第五章 - spring AOP - AOP基本概念及特点
 - 5 环绕通知：
 	在环绕方法的内部可以执行方法（连接点），连接点前后都执行通知。
 
-![advice](assets/images/2019/spring/advice.png)
+![advice](https://hunzino1.github.io/assets/images/2019/spring/advice.png)
 
 4 AOP优势和须知
 ---------------------------
