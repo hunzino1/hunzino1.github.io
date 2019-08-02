@@ -3,7 +3,7 @@ layout:     post
 title:      markdown格式实例
 category: stack
 tags: [stack]
-excerpt: 
+excerpt: 一个人有多努力，就会有多幸运。
 ---
 
 markdown格式实例
