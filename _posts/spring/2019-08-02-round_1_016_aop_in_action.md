@@ -158,8 +158,43 @@ public class Main {
 
 ##### 1 execution匹配
 
-1. execution(public * *(..))
-2. execution(* set*(..))
-3. execution(* com.shj.service.AccountService.*(..))
-4. execution(* com.shj.service..(..))
-5. execution(* com.shj.service...(..))
+1. execution(public * *(..))   // 所有的public方法
+2. execution(* set*(..))  //定位所有以set开头发方法
+3. execution(* com.shj.service.AccountService.*(..))   // AccountService类的所有方法
+4. execution(* com.shj.service..(..))  // service包下的所有方法
+5. execution(* com.shj.service...(..))  // service包及其子包下的所有方法
+
+##### 2 下例方法只支持spring aop
+
+1. within(com.shj.service.*)
+2. within(com.shj.service..*)  // within用于匹配指定类型内的方法执行
+3. this(com.shj.service.AccountService) // this用于匹配当前AOP代理对象的执行方法
+4. target() // 用于匹配当前目标对象的执行方法
+
+#### 2.2.2 advice应用
+
+```html
+   <aop:config>
+        <aop:aspect id="moocAspectAop" ref="moocAspect">
+            <aop:pointcut expression="execution(* com.shj.aop.schema.advice.biz.*Biz.*(..))" id="moocPiontcut"/>
+
+            <aop:before method="before" pointcut-ref="moocPiontcut"/>
+            <aop:after method="after" pointcut-ref="moocPiontcut"/>
+            <aop:after-returning method="returning" pointcut-ref="moocPiontcut"/>
+            <aop:after-throwing method="throwing" pointcut-ref="moocPiontcut"/>
+            <aop:around method="around" pointcut-ref="moocPiontcut" />
+            <aop:around method="around" pointcut="execution(* com.shj.aop.advice.biz.AspectBiz.init(String, int) and args(bizName, times))" />
+        </aop:aspect>
+    </aop:config>
+
+    如上，上例只是一个before切面，还有很多都是类似；
+
+    注意的地方很少， after-throwing只有存在throw才生效
+    此外aop:around 还支持传入参数 类型 + 形参名,如上对应java
+
+    public class AspectBiz {
+      public void init(String bizName, int times) {
+       //...
+      }
+    }
+```
