@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      spring入门 - 第五章 - spring AOP - 章节概要
+title:      spring入门(14) - 第五章 - spring AOP - 章节概要
 category: spring
 tags: [spring]
 excerpt: 一个人有多努力，就会有多幸运。
 ---
 
-spring入门 - 第五章 - spring AOP - 章节概要
+spring入门(14) - 第五章 - spring AOP - 章节概要
 =======================================
 
 AOP是一个新的专题，基础部分主要是入门
