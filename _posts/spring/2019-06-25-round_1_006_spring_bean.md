@@ -297,3 +297,4 @@ public class DestroyGlobal {
 
 default-init-method、 default-destroy-method是一个可选方法，可以不写对应的函数体也不会报错
 
+[aware接口](https://hunzino1.github.io/spring/2019/06/25/round_1_007_spring_aware.html)

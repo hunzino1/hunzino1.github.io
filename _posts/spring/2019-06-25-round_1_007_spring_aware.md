@@ -122,3 +122,5 @@ public class AwareBean implements BeanNameAware, ApplicationContextAware {
 ```
 
 [一个简单的博客](https://www.jianshu.com/p/c5c61c31080b)
+
+[自动装配](https://hunzino1.github.io/spring/2019/06/28/round_1_008_spring_autowiring.html)

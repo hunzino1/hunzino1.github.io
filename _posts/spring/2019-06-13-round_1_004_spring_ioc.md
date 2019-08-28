@@ -63,7 +63,6 @@ property： 属性
 xml文件：
 
 ```xml
-
 constructor-arg：
       在BeInjectClass中必须定义一个构造器，构造器的参数是injectClass（大小写必须与xml一致）。
 
@@ -92,6 +91,8 @@ constructor-arg：
 4、 No default constructor found;
 使用设值注入或者注解的时候，如果存在构造函数，Spring要提供显式的默认构造函数，否则会出错。
 ```
+
+### 都是基本很少用的用法，@Autowired可以解决绝大多数，强调目的：为了理解概念
 
 2 基于注解的注入实现
 ------------------------------------------
@@ -144,3 +145,5 @@ public class BeInjectClass {
 ```
 
 [参考博客](https://www.cnblogs.com/xiaostudy/p/9534697.html)
+
+[spring bean装配](https://hunzino1.github.io/spring/2019/06/25/round_1_005_spring_bean.html)

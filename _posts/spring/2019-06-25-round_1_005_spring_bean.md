@@ -65,3 +65,5 @@ A B这些对象就是bean，然后都是由spring容器管理，
 
 
 这里第三章和第四章都是按照以上的顺序来展开学习，在此总结现有一个整体认识。
+
+[bean的基本配置](https://hunzino1.github.io/spring/2019/06/25/round_1_006_spring_bean.html)

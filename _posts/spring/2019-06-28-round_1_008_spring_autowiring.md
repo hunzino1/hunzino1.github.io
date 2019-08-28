@@ -151,3 +151,5 @@ public class AutowiringBean {
 
 1. byName方式set方法参数名称要和bean标签id一致 (不一致的话set会不执行，但是不报错，只是没注入)
 2. Constructor按照参数类型查找其实就是按照class属性，当然可以省略id或者id与参数名不一致。
+
+[Resource](https://hunzino1.github.io/spring/2019/06/30/round_1_009_spring_resource_loader.html)

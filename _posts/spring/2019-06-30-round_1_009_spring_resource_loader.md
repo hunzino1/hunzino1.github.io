@@ -60,9 +60,7 @@ Resource类: spring用于加载各种资源**文件**的类。
 
 支持用链接获取，访问相对路径获取，也可以直接拿到流数据资源
 
-**总之，Resource的返回是一个文件信息类(Resource实例)，而获取的过程可能是**
-
-**访问url、相对路径等多种多样的。**
+**总之，Resource的返回是一个文件信息类(Resource实例)，而获取的过程可能是访问url、相对路径等多种多样的。**
 
 ### 1.2 ResourceLoader类
 
@@ -90,10 +88,10 @@ ResourceLoader有个 getResource 方法，直接返回一个Resource(文件信�
 
 再看看ResourceLoader参数类型，ResourceLoader参数是前缀 + 路径的组合。
 
-1. classpath:++++++         classpath: + 路径
-2. file:+++++               file:      + 路径
-3. http:+++++               http:      + 路径
-4. none(无前缀)             ResourceLoader的默认实现方式是classpath
+1. classpath:            classpath: + 路径
+2. file:                 file:      + 路径
+3. http:                 http:      + 路径
+4. none(无前缀):         ResourceLoader的默认实现方式是classpath
 
 ### 1.3 综合举例使用
 
@@ -133,4 +131,14 @@ public class ResourceBean implements ApplicationContextAware {
 ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
 ResourceBean resourceBean = (ResourceBean) context.getBean("resourceBean");
 resourceBean.getResource("classpath:file/test.txt");
+
+2 Resource 和 @Resource
+-----------------
+
+- Resource就是一个类，一个接口，作用是加载资源文件
+- @Resource是一个注解， 是为了获取一个bean
+
+所以二者并无关系。
+
+[第四章-章节概要](https://hunzino1.github.io/spring/2019/07/01/round_1_chapter4.html)
 ```

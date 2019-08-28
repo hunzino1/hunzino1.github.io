@@ -23,9 +23,11 @@ spring入门 - 第四章 - spring bean装配(注解实现方式) - 章节概要
 
 1. classpath扫描和组件管理
 2. 类的自动检测和注册bean
-3. <context:annotation-config/>
+3. \<context:annotation-config\/>
 4. @Component @Service @Respository @Controller
 5. @Require
 6. @Autowired
 7. @Qualifier
 8. @Resource
+
+[bean的定义和作用域](https://hunzino1.github.io/spring/2019/07/02/round_1_010_spring_annotation.html)

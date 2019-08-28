@@ -18,7 +18,7 @@ spring入门(010) - 第四章(1) - spring bean装配(注解实现方式) - bean�
 1. classpath扫描和组件管理
 2. 元注解（Meta-annotations）
 3. 类的自动检测及bean的注册
-4. <context:annotation-config/>
+4. \<context:annotation-config/>
 5. 类的自动检测及Bean的注册
 6. 使用过滤器进行自定义扫描
 7. 定义Bean
@@ -36,7 +36,7 @@ spring入门(010) - 第四章(1) - spring bean装配(注解实现方式) - bean�
 
 在xml配置实现方式中，每一个bean标签就是一个bean；
 
-而对应到注解实现形式中，其实可以单纯的任务作用在类class上的注解是一个bean
+而对应到注解实现形式中，其实可以单纯的认为作用在类class上的注解是一个bean
 
 而不是还包括class中带有注解的成员变量和成员方法。
 
@@ -53,7 +53,7 @@ spring入门(010) - 第四章(1) - spring bean装配(注解实现方式) - bean�
 
 注解形式的bean集合 就包括 带有注解的class + 成员变量 + 方法参数。
 
-已经实践，类上必须有注解，所以bean的集合就是类定义维度的
+已经实践，类上必须有注解，所以bean的集合就是类定义维度的（no，比如@Bean）
 
 ```
 
@@ -120,14 +120,14 @@ public @interface Dog {
 
 #### 2.1.2 spring容器是如何发现这些注解的？
 
-见[类的自动检测](### 2.2 类的自动检测及Bean的注册)
+见[2.2 类的自动检测](### 2.2 类的自动检测及Bean的注册)
 
 ### 2.2 类的自动检测及Bean的注册
 
 对于类的自动检测，spring有两种配置方式：
 
-1. <context:annotation-config/>
-2. <context:component-scan base-package=""/>
+1. \<context:annotation-config/>
+2. \<context:component-scan base-package=""/>
 
 二者的区别会在分别介绍之后，再做总结。
 
@@ -150,11 +150,11 @@ xml配置实现如下：
 
 可以看出，xml的头文件添加了context约束；然后直接添加相应配置即可。
 
-#### 2.2.1 <context:annotation-config/> 和 <context:component-scan base-package=""/> 比较
+#### 2.2.1 \<context:annotation-config/> 和 \<context:component-scan base-package=""/> 比较
 
-虽然二者都支持spring bean的自动扫描/注册，但是<context:annotation-config/>基本不实用
+虽然二者都支持spring bean的自动扫描/注册，但是\<context:annotation-config/>基本不实用
 
-因为<context:component-scan base-package=""/>配置包含前者的全部内容。
+因为\<context:component-scan base-package=""/>配置包含前者的全部内容。
 
 二者的主要区别在于：
 

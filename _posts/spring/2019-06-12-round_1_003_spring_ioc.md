@@ -167,7 +167,7 @@ public class Main {
 
     property就是bean的属性，可以通过value给bean赋上初始值；
 
-    拓展： 在此可以推测bean质检的注入，说白了bean A注入到B，其实A就是B的一个成员变量
+    拓展： 在此可以推测bean之间的注入，说白了bean A注入到B，其实A就是B的一个成员变量
     那么用property应该也行。
 
 ```
@@ -272,3 +272,4 @@ public class User {
 
 ![junit](https://hunzino1.github.io/assets/images/2019/spring/junit.png)
 
+[spring 注入方式](https://hunzino1.github.io/spring/2019/06/13/round_1_004_spring_ioc.html)
