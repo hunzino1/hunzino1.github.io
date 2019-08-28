@@ -173,7 +173,7 @@ context:component-scan支持扫描类/方法/属性；
 
 ### 2.3 spring bean的过滤
 
-上面<context:component-scan base-package=""/>，会将base-package下的所有带有注解的bean全部扫描注册到容器中
+上面\<context:component-scan base-package=""/>，会将base-package下的所有带有注解的bean全部扫描注册到容器中
 
 但是有时候只是想搜索特定的内容，或者想跳过特定的结构
 
@@ -199,11 +199,9 @@ context:component-scan支持扫描类/方法/属性；
 4. regex：      基于正则表达式的筛选
 5. custom：     暂不清楚
 
-[参考地址]()
-
 还可以使用use-default-filters属性禁止自动发现某个包下的bean
 
-<context:component-scan base-package="com.shj" use-default-filters="false"/>
+\<context:component-scan base-package="com.shj" use-default-filters="false"/>
 
 3 bean的定义和scope作用域
 ---------------------------------------------
@@ -374,3 +372,5 @@ public static void main(String[] args) {
 1. 注解ApplicationContext也不能丢，因为要引入xml文件
 
 这是我犯了迷糊的地方，还是得多多联系，懂了到熟了。
+
+[Autowired](https://hunzino1.github.io/spring/2019/07/02/round_1_011_spring_autowired.html)
