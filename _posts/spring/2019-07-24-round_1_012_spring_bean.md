@@ -209,7 +209,7 @@ public class JdbcConfig {
 
 #### 2.2.3 几点注意
 
-1. properties文件格式不带双引号， 如下图
+1. properties文件格式不带双引号
 2. 观察properties文件，返现名字是jdbc.开头，就是文件名 + 字段名的构成，这是为了避免冲突。
 > 比如${username}返回的就是电脑用户名，为了防止这种冲突问题，jdbc.基本上确定了key的唯一性 
 
